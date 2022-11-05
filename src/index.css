@@ -6,3 +6,10 @@ body {
   background-color: #eee;
   font-family: "Cairo", sans-serif;
 }
+
+/* Components */
+@layer components {
+  .heading {
+    @apply text-2xl text-center pt-[5rem] pb-5;
+  }
+}

@@ -5,14 +5,16 @@ import Footer from "./components/Footer";
 // Pages
 import BeginningScreen from "./pages/BeginningScreen";
 import Home from "./pages/Home";
+import UserProfile from "./pages/UserProfile";
 import Groups from "./pages/Groups";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Error from "./pages/Error";
 
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+// Packages
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <BeginningScreen />,
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/profile",
+    element: <UserProfile />,
   },
   {
     path: "/groups",
@@ -42,8 +48,10 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <>
-      {/* <Header /> */}
-      <RouterProvider router={router} />
+      <Header />
+      <div className="container">
+        <RouterProvider router={router} />
+      </div>
       {/* <Footer /> */}
     </>
   );

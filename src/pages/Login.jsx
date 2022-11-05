@@ -1,7 +1,7 @@
 export default function Login() {
   return (
     <>
-      <h1 className="p-10 text-2xl text-center">تسجيل الدخول</h1>
+      <h1 className="heading">تسجيل الدخول</h1>
     </>
   );
 }
