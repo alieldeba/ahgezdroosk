@@ -8,13 +8,13 @@ export default function BeginningScreen() {
       <div className="flex mt-5">
         <Link
           to="/login"
-          className="px-5 py-2.5 ml-2.5 text-white bg-indigo-600 duration-150 hover:bg-indigo-700 active:shadow-lg"
+          className="px-5 py-2.5 ml-2.5 text-white bg-success duration-150 active:shadow-lg"
         >
           تسجيل الدخول
         </Link>
         <Link
           to="/signup"
-          className="px-5 py-2.5 mr-2.5 text-white bg-indigo-600 duration-150 hover:bg-indigo-700 active:shadow-lg"
+          className="px-5 py-2.5 mr-2.5 text-white bg-success duration-150 active:shadow-lg"
         >
           إنشاء حساب
         </Link>

@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #eee;
+  background-color: #0075ff;
   font-family: "Cairo", sans-serif;
+  color: white;
 }
 
 /* Components */
