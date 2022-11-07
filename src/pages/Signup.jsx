@@ -30,7 +30,7 @@ export default function Signup() {
   return (
     <>
       <h1 className="heading">إنشاء حساب</h1>
-      <form className="grid justify-center items-center gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-[300px] mr-[3rem]">
+      <form className="grid justify-center items-center gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-[300px] md:mr-[3rem]">
         <div className="flex flex-col">
           <label className="mb-2">الأسم الاول</label>
           <input
