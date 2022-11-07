@@ -9,7 +9,7 @@ export default function Login() {
 
   async function submit() {
     const allSystemUsers = await axios
-      .get("http://localhost:5000/users")
+      .get("https://ahgez.onrender.com/users")
       .then((res) => res.data)
       .catch((error) => console.log(error.message));
 

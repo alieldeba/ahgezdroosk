@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import { useState } from "react";
 
 export default function Signup() {
@@ -10,20 +10,29 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   function submit() {
-    if (!firstName || !lastName || !telephone || !email || !password || !confirmPassword) {
-      return alert("يرجى ملء جميع البيانات")
+    if (
+      !firstName ||
+      !lastName ||
+      !telephone ||
+      !email ||
+      !password ||
+      !confirmPassword
+    ) {
+      return alert("يرجى ملء جميع البيانات");
     } else if (password !== confirmPassword) {
-      return alert("الرقم السرى ليس مطابقا للتأكيد")
+      return alert("الرقم السرى ليس مطابقا للتأكيد");
     } else {
-      return axios.post("http://localhost:5000/users", {
-        firstName,
-        lastName,
-        telephone,
-        email,
-        password
-      }).then(alert("تم إنشاء الحساب بنجاح"))
-      .then(window.location.href = '/login')
-      .catch((e) => console.error(e.message))
+      return axios
+        .post("https://ahgez.onrender.com/users", {
+          firstName,
+          lastName,
+          telephone,
+          email,
+          password,
+        })
+        .then(alert("تم إنشاء الحساب بنجاح"))
+        .then((window.location.href = "/login"))
+        .catch((e) => console.error(e.message));
     }
   }
 
@@ -93,8 +102,10 @@ export default function Signup() {
         </div>
       </form>
       <div className="flex w-full justify-center">
-        <button className="px-5 py-2.5 mr-2.5 text-white bg-success duration-150 active:shadow-lg mt-5 lg:mt-0"
-        onClick={() => submit()}>
+        <button
+          className="px-5 py-2.5 mr-2.5 text-white bg-success duration-150 active:shadow-lg mt-5 lg:mt-0"
+          onClick={() => submit()}
+        >
           إنشاء حساب
         </button>
       </div>
