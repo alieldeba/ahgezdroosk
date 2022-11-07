@@ -8,6 +8,10 @@ body {
   color: white;
 }
 
+input {
+  color: #0075ff;
+}
+
 /* Components */
 @layer components {
   .heading {

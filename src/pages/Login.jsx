@@ -1,8 +1,31 @@
+import axios from "axios";
 import { useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // const [logingUser, setLogingUser] = useState({});
+
+  async function submit() {
+    const allSystemUsers = await axios
+      .get("http://localhost:5000/users")
+      .then((res) => res.data)
+      .catch((error) => console.log(error.message));
+
+    const logingUser = allSystemUsers.filter(
+      (user) => user.email === email && user.password === password
+    );
+
+    // setLogingUser(logingUser);
+
+    if (logingUser.length > 0) {
+      alert("تم تسجيل الدخول ✔");
+    } else {
+      alert("لم يتم تسجيل الدخول ❌");
+    }
+    console.log(logingUser);
+  }
 
   return (
     <>
@@ -26,7 +49,10 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </form>
-        <button className="px-5 py-2.5 mr-2.5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg" onClick={() => console.log(email, password)}>
+        <button
+          className="px-5 py-2.5 mr-2.5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg"
+          onClick={() => submit()}
+        >
           تسجيل الدخول
         </button>
       </section>
