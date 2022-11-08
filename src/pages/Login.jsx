@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <>
-      <section className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[250px] flex flex-col items-center justify-between bg-[#222] py-5 drop-shadow-2xl">
+      <section className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[250px] flex flex-col items-center justify-between bg-[#b6b6b6] rounded-md py-5 drop-shadow-2xl">
         <h3 className="text-lg">تسجيل الدخول</h3>
         <form className="w-full flex flex-col items-center mt-5">
           <label className="mb-3 ml-[5rem]">البريد الإلكترونى</label>

@@ -9,8 +9,11 @@ module.exports = {
       },
     },
     colors: {
-      "primary": "#0075ff",
-      "success": "#4BB543",
+      primary: "#0075ff",
+      secondary: "#6c757d",
+      success: "#157347",
+      danger: "#dc3545",
+      dark: "#212529",
     },
     extend: {},
   },

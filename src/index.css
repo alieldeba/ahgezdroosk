@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #0075ff;
+  background-color: #eee;
   font-family: "Cairo", sans-serif;
-  color: white;
+  color: #000;
 }
 
 input {
@@ -15,6 +15,6 @@ input {
 /* Components */
 @layer components {
   .heading {
-    @apply text-2xl text-center pt-[5rem] pb-5;
+    @apply text-2xl p-10 relative before:absolute before:w-14 before:h-1 before:bottom-5 before:right-5 before:bg-primary before:rounded-lg;
   }
 }

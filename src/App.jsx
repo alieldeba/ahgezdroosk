@@ -9,18 +9,20 @@ import UserProfile from "./pages/UserProfile";
 import Groups from "./pages/Groups";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import UserManual from "./pages/UserManual";
+import Admin from "./pages/Admin";
 import Error from "./pages/Error";
 
 // Packages
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export const router = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <BeginningScreen />,
+  // },
   {
     path: "/",
-    element: <BeginningScreen />,
-  },
-  {
-    path: "/home",
     element: <Home />,
   },
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
     element: <Signup />,
   },
   {
+    path: "/user-manual",
+    element: <UserManual />,
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
+  {
     path: "*",
     element: <Error />,
   },
@@ -48,11 +58,11 @@ export const router = createBrowserRouter([
 export default function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div className="container">
         <RouterProvider router={router} />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
