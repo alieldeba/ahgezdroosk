@@ -3,13 +3,12 @@ export default function UserProfile() {
     <>
       <h1 className="heading">الصفحة الشخصية</h1>
       <img
-        src="/images/user.jpg"
+        src="/images/user.png"
         alt="user"
+        loading="lazy"
         className="rounded-full m-auto mb-5"
+        width={100}
       />
-      <h3 className="text-xl">الأسم: علي سامح مصطفى الديبة</h3>
-      <h3 className="text-xl">الوظيفة: طالب</h3>
-      <h3 className="text-xl">الصف: الثالث الإعدادى</h3>
     </>
   );
 }

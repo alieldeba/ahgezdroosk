@@ -14,53 +14,23 @@ import Admin from "./pages/Admin";
 import Error from "./pages/Error";
 
 // Packages
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-export const router = createBrowserRouter([
-  // {
-  //   path: "/",
-  //   element: <BeginningScreen />,
-  // },
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/profile",
-    element: <UserProfile />,
-  },
-  {
-    path: "/groups",
-    element: <Groups />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/user-manual",
-    element: <UserManual />,
-  },
-  {
-    path: "/admin",
-    element: <Admin />,
-  },
-  {
-    path: "*",
-    element: <Error />,
-  },
-]);
+import { Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
     <>
       <Header />
       <div className="container">
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="groups" element={<Groups />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="user-manual" element={<UserManual />} />
+          <Route path="admin" element={<Admin />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </div>
       <Footer />
     </>

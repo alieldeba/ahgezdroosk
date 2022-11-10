@@ -103,7 +103,7 @@ export default function Signup() {
       </form>
       <div className="flex w-full justify-center">
         <button
-          className="px-5 py-2.5 mr-2.5 text-white bg-success duration-150 active:shadow-lg mt-5 lg:mt-0"
+          className="px-5 py-2.5 mr-2.5 text-[#fff] bg-success duration-150 active:shadow-lg mt-5 lg:mt-0"
           onClick={() => submit()}
         >
           إنشاء حساب

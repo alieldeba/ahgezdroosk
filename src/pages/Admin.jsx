@@ -22,10 +22,10 @@ export default function Admin() {
   return (
     <>
       {loggedIn ? (
-        <>
+        <section>
           <h1 className="heading">أهلا بك أيها المعلم</h1>
-          <section className="flex justify-center items-center h-[calc(100vh_-_250px)]">
-            <div className="cursor-pointer ml-10">
+          <main className="flex flex-col sm:flex-row justify-center items-center h-[calc(100vh_-_150px)]">
+            <div className="cursor-pointer ml-0 mb-10 sm:ml-10 sm:mb-0">
               <FuturesCard
                 img="/images/groups.png"
                 imgWidth="150"
@@ -35,11 +35,11 @@ export default function Admin() {
             <div className="cursor-pointer">
               <FuturesCard img="/images/users.png" imgWidth="150" alt="users" />
             </div>
-          </section>
-        </>
+          </main>
+        </section>
       ) : (
         <section className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[250px] flex flex-col items-center justify-between bg-[#b6b6b6] rounded-md py-5 drop-shadow-2xl">
-          <h3 className="text-lg">تسجيل الدخول</h3>
+          <h3 className="text-lg">تسجيل الدخول الى صفحة المعلم</h3>
           <form className="w-full flex flex-col items-center mt-5">
             <label className="mb-3 ml-[5rem]">البريد الإلكترونى</label>
             <input

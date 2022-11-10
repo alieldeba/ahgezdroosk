@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   const footerNavs = [
     {
-      href: "/home",
+      href: "/",
       name: "القائمة الرئيسية",
     },
     {
@@ -29,6 +31,7 @@ export default function Footer() {
         <img
           src="https://www.floatui.com/logo.svg"
           className="w-32 sm:mx-auto"
+          loading="lazy"
         />
         {/* <p className="leading-relaxed mt-2 text-[15px]">
           كان هو النص الوهمي القياسي في الصناعة منذ القرن الخامس عشر الميلادي ،
@@ -39,7 +42,7 @@ export default function Footer() {
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-x-reverse sm:space-y-0">
         {footerNavs.map((item, idx) => (
           <li className="text-secondary hover:text-dark" key={idx}>
-            <a href={item.href}>{item.name}</a>
+            <Link to={item.href}>{item.name}</Link>
           </li>
         ))}
       </ul>
