@@ -21,7 +21,7 @@ export default function Futures() {
           img="/images/thinking.png"
           alt="thinking"
           title="التفكير"
-          desc="ليس عليك التفكير بإستعجال خذ وقك و احجز فى اى وقت تريده و فى اى مجموعة"
+          desc="ليس عليك التفكير بإستعجال خذ وقتك و احجز فى اى وقت تريده و فى اى مجموعة"
         />
         <FuturesCard
           img="/images/easy.png"
