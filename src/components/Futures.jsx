@@ -1,4 +1,5 @@
-import FuturesCard from "./FuturesCard";
+import { lazy } from "react";
+const FuturesCard lazy(() => import("./FuturesCard"));
 
 export default function Futures() {
   return (
