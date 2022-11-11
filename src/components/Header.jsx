@@ -14,14 +14,14 @@ export default function Header() {
     <header>
       <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 md:space-x-reverse">
         <div className="flex justify-between">
-          <a href="javascript:void(0)">
+          <Link to="/">
             <img
               src="https://floatui.com/logo.svg"
               width={120}
               height={50}
               alt="Float UI logo"
             />
-          </a>
+          </Link>
           <button
             className="text-gray-500 outline-none md:hidden"
             onClick={() => setState(!state)}

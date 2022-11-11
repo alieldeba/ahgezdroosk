@@ -1,20 +1,20 @@
-// Components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-// Pages
-import BeginningScreen from "./pages/BeginningScreen";
-import Home from "./pages/Home";
-import UserProfile from "./pages/UserProfile";
-import Groups from "./pages/Groups";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import UserManual from "./pages/UserManual";
-import Admin from "./pages/Admin";
-import Error from "./pages/Error";
-
 // Packages
 import { Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+
+// Components
+const Header = lazy(() => import("./components/Header"));
+const Footer = lazy(() => import("./components/Footer"));
+
+// Pages
+const Home = lazy(() => import("./pages/Home"));
+const UserProfile = lazy(() => import("./pages/UserProfile"));
+const Groups = lazy(() => import("./pages/Groups"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const UserManual = lazy(() => import("./pages/UserManual"));
+const Admin = lazy(() => import("./pages/Admin"));
+const Error = lazy(() => import("./pages/Error"));
 
 export default function App() {
   return (

@@ -1,4 +1,5 @@
-import GroupCard from "../components/GroupCard";
+import { lazy } from "react";
+const GroupCard = lazy(() => import("../components/GroupCard"));
 
 export default function Groups() {
   return (

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import Hero from "../components/Hero";
-import Futures from "../components/Futures";
+import { lazy } from "react";
+const Hero = lazy(() => import("../components/Hero"));
+const Futures = lazy(() => import("../components/Futures"));
 
 export default function Home() {
   return (

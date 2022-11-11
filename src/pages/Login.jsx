@@ -30,7 +30,7 @@ export default function Login() {
     <section>
       <h3 className="heading">تسجيل الدخول</h3>
       <main className="flex flex-col items-center justify-between rounded-md py-5 drop-shadow-2xl">
-        <form className="w-full flex justify-evenly items-center mt-5">
+        <form className="w-full flex flex-col md:flex-row justify-evenly items-center mt-5">
           <div className="flex flex-col">
             <label className="mb-3 ml-[5rem]">البريد الإلكترونى</label>
             <input

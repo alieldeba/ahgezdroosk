@@ -1,5 +1,5 @@
-import React from "react";
-import NumberBox from "../components/NumberBox";
+import { lazy } from "react";
+const NumberBox = lazy(() => import("../components/NumberBox"));
 
 export default function UserManual() {
   return (
