@@ -15,8 +15,6 @@ export default function Login() {
       (user) => user.email === email && user.password === password
     );
 
-    setLogingUser(logingUser);
-
     if (logingUser.length > 0) {
       alert("تم تسجيل الدخول ✔");
       window.location.href = "/profile";
