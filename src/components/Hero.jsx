@@ -1,6 +1,7 @@
+import React from "react"
 import { Link } from "react-router-dom";
 
-export default function Hero() {
+function Hero() {
   return (
     <section className="my-24 mx-auto max-w-screen-xl pb-4 px-4 sm:px-8">
       <div className="text-center space-y-4">
@@ -31,3 +32,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default React.memo(Hero)

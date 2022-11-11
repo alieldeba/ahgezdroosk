@@ -1,6 +1,7 @@
+import React from "react"
 import { Link } from "react-router-dom";
 
-export default function BeginningScreen() {
+function BeginningScreen() {
   return (
     <section className="text-center h-screen flex flex-col justify-center items-center">
       <h1 className="text-xl lg:text-3xl mb-3">مرحبا بكم فى منصة احجز اونلاين</h1>
@@ -22,3 +23,5 @@ export default function BeginningScreen() {
     </section>
   );
 }
+
+export default React.memo(BeginningScreen)

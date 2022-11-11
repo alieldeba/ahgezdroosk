@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
-  const [state, setState] = useState(false);
+function Header() {
+  const [state, setState] = React.useState(false);
 
   const navigation = [
     { title: "القائمة الرئيسية", path: "/" },
@@ -84,3 +84,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default React.memo(Header)

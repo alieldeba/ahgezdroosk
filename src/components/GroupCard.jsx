@@ -1,4 +1,6 @@
-export default function GroupCard(props) {
+import React from "react"
+
+function GroupCard(props) {
   return (
     <article className="max-w-md mx-auto mt-4 shadow-lg bg-[#222] rounded-md duration-300 hover:shadow-sm h-[400px] w-[320px] relative">
       <img
@@ -16,3 +18,5 @@ export default function GroupCard(props) {
     </article>
   );
 }
+
+export default React.memo(GroupCard)

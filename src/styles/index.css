@@ -11,6 +11,10 @@ body {
   font-family: "Cairo", sans-serif;
   color: #000;
 }
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
 input {
   color: #0075ff;
 }

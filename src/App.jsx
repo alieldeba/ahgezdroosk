@@ -1,22 +1,22 @@
 // Packages
 import { Route, Routes } from "react-router-dom";
-import { lazy } from "react";
+import React from "react";
 
 // Components
-const Header = lazy(() => import("./components/Header"));
-const Footer = lazy(() => import("./components/Footer"));
+const Header = React.lazy(() => import("./components/Header"));
+const Footer = React.lazy(() => import("./components/Footer"));
 
 // Pages
-const Home = lazy(() => import("./pages/Home"));
-const UserProfile = lazy(() => import("./pages/UserProfile"));
-const Groups = lazy(() => import("./pages/Groups"));
-const Login = lazy(() => import("./pages/Login"));
-const Signup = lazy(() => import("./pages/Signup"));
-const UserManual = lazy(() => import("./pages/UserManual"));
-const Admin = lazy(() => import("./pages/Admin"));
-const Error = lazy(() => import("./pages/Error"));
+const Home = React.lazy(() => import("./pages/Home"));
+const UserProfile = React.lazy(() => import("./pages/UserProfile"));
+const Groups = React.lazy(() => import("./pages/Groups"));
+const Login = React.lazy(() => import("./pages/Login"));
+const Signup = React.lazy(() => import("./pages/Signup"));
+const UserManual = React.lazy(() => import("./pages/UserManual"));
+const Admin = React.lazy(() => import("./pages/Admin"));
+const Error = React.lazy(() => import("./pages/Error"));
 
-export default function App() {
+function App() {
   return (
     <>
       <Header />
@@ -36,3 +36,5 @@ export default function App() {
     </>
   );
 }
+
+export default React.memo(App)

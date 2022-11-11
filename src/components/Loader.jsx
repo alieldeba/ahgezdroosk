@@ -1,6 +1,8 @@
+import React from "react"
+
 import "../styles/loader.css";
 
-export default function Loader() {
+function Loader() {
   return (
     <div id="loader">
       <div id="shadow"></div>
@@ -8,3 +10,6 @@ export default function Loader() {
     </div>
   );
 }
+
+
+export default React.memo(Loader)

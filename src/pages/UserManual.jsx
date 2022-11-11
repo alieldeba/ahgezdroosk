@@ -1,7 +1,7 @@
-import { lazy } from "react";
-const NumberBox = lazy(() => import("../components/NumberBox"));
+import React from "react";
+const NumberBox = React.lazy(() => import("../components/NumberBox"));
 
-export default function UserManual() {
+function UserManual() {
   return (
     <>
       <section>
@@ -18,3 +18,5 @@ export default function UserManual() {
     </>
   );
 }
+
+export default React.memo(UserManual)

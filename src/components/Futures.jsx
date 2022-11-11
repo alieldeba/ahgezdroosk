@@ -1,6 +1,8 @@
-import FuturesCard from "./FuturesCard";
+import React from "react";
 
-export default function Futures() {
+const FuturesCard = React.lazy(() => import("./FuturesCard"));
+
+function Futures() {
   return (
     <section>
       <h3 className="heading mb-5">المميزات</h3>
@@ -33,3 +35,5 @@ export default function Futures() {
     </section>
   );
 }
+
+export default React.memo(Futures)

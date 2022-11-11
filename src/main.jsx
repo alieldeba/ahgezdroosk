@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 
 const App = lazy(() => import("./App"));
 import Loader from "./components/Loader";
-import "./index.css";
+import "./styles/index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>

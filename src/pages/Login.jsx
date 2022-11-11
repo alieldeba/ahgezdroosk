@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
+import React from "react";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Login() {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   async function submit() {
     const allSystemUsers = await axios
@@ -60,3 +60,5 @@ export default function Login() {
     </section>
   );
 }
+
+export default React.memo(Login)

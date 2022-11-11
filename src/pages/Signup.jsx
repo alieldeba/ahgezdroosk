@@ -1,13 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
+import React from "react";
 
-export default function Signup() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [telephone, setTelephone] = useState(null);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+function Signup() {
+  const [firstName, setFirstName] = React.useState("");
+  const [lastName, setLastName] = React.useState("");
+  const [telephone, setTelephone] = React.useState(null);
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
 
   function submit() {
     if (
@@ -112,3 +112,5 @@ export default function Signup() {
     </>
   );
 }
+
+export default React.memo(Signup)

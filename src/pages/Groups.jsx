@@ -1,10 +1,12 @@
-import { lazy } from "react";
-const GroupCard = lazy(() => import("../components/GroupCard"));
+import React from "react";
+const GroupCard = React.lazy(() => import("../components/GroupCard"));
 
-export default function Groups() {
+function Groups() {
   return (
     <section>
       <h1 className="heading">المجموعات</h1>
     </section>
   );
 }
+
+export default React.memo(Groups)
