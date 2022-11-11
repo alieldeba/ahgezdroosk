@@ -23,7 +23,7 @@ export default function Signup() {
       return alert("الرقم السرى ليس مطابقا للتأكيد");
     } else {
       return axios
-        .post("https://ahgez.onrender.com/users", {
+        .post("https://ahgez.onrender.com/users/", {
           firstName,
           lastName,
           telephone,
@@ -31,7 +31,7 @@ export default function Signup() {
           password,
         })
         .then(alert("تم إنشاء الحساب بنجاح"))
-        .then((window.location.href = "/login"))
+        // .then((window.location.href = "/login"))
         .catch((e) => console.error(e.message));
     }
   }
