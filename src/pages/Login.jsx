@@ -5,9 +5,11 @@ function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
+  const USERS_API = import.meta.env.VITE_USERS_API;
+
   async function submit() {
     const allSystemUsers = await axios
-      .get("https://ahgez.onrender.com/users")
+      .get(USERS_API)
       .then((res) => res.data)
       .catch((error) => console.log(error.message));
 
@@ -61,4 +63,4 @@ function Login() {
   );
 }
 
-export default React.memo(Login)
+export default React.memo(Login);

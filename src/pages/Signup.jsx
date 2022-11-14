@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+// import env from "react-dotenv";
 
 function Signup() {
   const [firstName, setFirstName] = React.useState("");
@@ -8,6 +9,8 @@ function Signup() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
+
+  const USERS_API = import.meta.env.VITE_USERS_API;
 
   function submit() {
     if (
@@ -22,17 +25,19 @@ function Signup() {
     } else if (password !== confirmPassword) {
       return alert("الرقم السرى ليس مطابقا للتأكيد");
     } else {
-      return axios
-        .post("https://ahgez.onrender.com/users/", {
-          firstName,
-          lastName,
-          telephone,
-          email,
-          password,
-        })
-        .then(alert("تم إنشاء الحساب بنجاح"))
-        // .then((window.location.href = "/login"))
-        .catch((e) => console.error(e.message));
+      return (
+        axios
+          .post(USERS_API, {
+            firstName,
+            lastName,
+            telephone,
+            email,
+            password,
+          })
+          .then(alert("تم إنشاء الحساب بنجاح"))
+          // .then((window.location.href = "/login"))
+          .catch((e) => console.error(e.message))
+      );
     }
   }
 
@@ -113,4 +118,4 @@ function Signup() {
   );
 }
 
-export default React.memo(Signup)
+export default React.memo(Signup);

@@ -1,6 +1,5 @@
 import React from "react";
 import { lazy } from "react";
-const FuturesCard = lazy(() => import("./FuturesCard"));
 
 const FuturesCard = React.lazy(() => import("./FuturesCard"));
 

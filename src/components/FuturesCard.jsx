@@ -6,11 +6,10 @@ function FuturesCard(props) {
       <img
         src={props.img}
         className="m-auto mb-2"
-        alt="clock"
+        alt={props.alt}
         width={props.imgWidth || 50}
         loading="lazy"
       />
-      <img src={props.img} className="m-auto mb-2" alt={props.alt} width={props.imgWidth || 50} loading="lazy" />
       <h3 className="text-xl mb-1">{props.title}</h3>
       <p className="text-secondary">{props.desc}</p>
     </div>

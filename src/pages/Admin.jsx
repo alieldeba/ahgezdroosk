@@ -7,12 +7,15 @@ function Admin() {
   const [password, setPassword] = React.useState("");
   const [loggedIn, setLoggedIn] = React.useState(false);
 
+  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD
+
   function submit() {
     if ((!email, !password)) {
       alert("يرجى إدخال جميع البيانات");
     } else if (
-      email === "alieldeba375@gmail.com" &&
-      password === "alieldeba123"
+      email === ADMIN_EMAIL &&
+      password === ADMIN_PASSWORD
     ) {
       setLoggedIn(true);
     } else {
@@ -23,7 +26,6 @@ function Admin() {
   return (
     <>
       {loggedIn ? (
-        // MainDashboard
         <>
           <section>
             <h1 className="heading">أهلا بك أيها المعلم</h1>
@@ -62,7 +64,7 @@ function Admin() {
           />
         </>
       ) : (
-        // Login Page
+        <>
         <section>
           <h3 className="heading">تسجيل الدخول إالى صفحة المالك</h3>
           <main className="flex flex-col items-center justify-between rounded-md py-5 drop-shadow-2xl">
@@ -96,6 +98,7 @@ function Admin() {
             </button>
           </main>
         </section>
+        </>
       )}
     </>
   );
