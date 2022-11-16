@@ -43,6 +43,8 @@ function Signup() {
           telephoneError.current.textContent = telephoneErrorText;
           emailError.current.textContent = emailErrorText;
           passwordError.current.textContent = passwordErrorText;
+        } else {
+          alert("تم إنشاء الحساب بنجاح 🎉");
         }
       })
       .catch((e) => console.log(e.message));
@@ -53,60 +55,52 @@ function Signup() {
       <h1 className="heading">إنشاء حساب</h1>
       <form
         method="post"
-        className="bg-[#fff] m-auto w-[350px] h-[500px] flex flex-col justify-between p-10"
+        className="bg-[#fff] m-auto w-[300px] h-[500px] flex flex-col justify-between px-10 py-5"
       >
-        <h3 className="text-xl text-center">Create Account</h3>
-        <div className="flex flex-col">
+        <h3 className="text-xl text-center mb-5">إنشاء حساب</h3>
+        <div className="flex flex-col mb-2">
           <label htmlFor="name" className="text-lg">
-            Name
+            الأسم
           </label>
           <input
             type="text"
             name="name"
             onChange={(e) => setName(e.target.value)}
           />
-          <p className="text-danger" ref={nameError}>
-            Error
-          </p>
+          <p className="text-danger" ref={nameError}></p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-2">
           <label htmlFor="telephone" className="text-lg">
-            Telephone
+            رقم الهاتف
           </label>
           <input
             type="tel"
             name="telephone"
             onChange={(e) => setTelephone(e.target.value)}
           />
-          <p className="text-danger text-md" ref={telephoneError}>
-            Error
-          </p>
+          <p className="text-danger text-md" ref={telephoneError}></p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-2">
           <label htmlFor="email" className="text-lg">
-            Email
+            البريد الإلكترونى
           </label>
           <input
             type="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <p className="text-danger" ref={emailError}>
-            Error
-          </p>
+          <p className="text-danger" ref={emailError}></p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-2">
           <label htmlFor="password" className="text-lg">
-            Password
+            كلمة المرور
           </label>
           <input
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <p className="text-danger" ref={passwordError}>
-            Error
-          </p>
+          <p className="text-danger" ref={passwordError}></p>
         </div>
         <button
           className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"

@@ -5,27 +5,25 @@ const License = React.lazy(() => import("../components/License"));
 function Admin() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
-  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL
-  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD
+  const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
-  function submit() {
+  function submit(e) {
+    e.preventDefault();
     if ((!email, !password)) {
-      alert("يرجى إدخال جميع البيانات");
-    } else if (
-      email === ADMIN_EMAIL &&
-      password === ADMIN_PASSWORD
-    ) {
-      setLoggedIn(true);
+      alert("يرجى إدخال جميع البيانات 🙄");
+    } else if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+      setIsLoggedIn(true);
     } else {
-      alert("الكلمة السرية او البريد الإلكترونى غير صحيح");
+      alert("هنالك خطأ فى البريد الإلكترونى او كلمة المرور 😔");
     }
   }
 
   return (
     <>
-      {loggedIn ? (
+      {isLoggedIn ? (
         <>
           <section>
             <h1 className="heading">أهلا بك أيها المعلم</h1>
@@ -65,39 +63,43 @@ function Admin() {
         </>
       ) : (
         <>
-        <section>
-          <h3 className="heading">تسجيل الدخول إالى صفحة المالك</h3>
-          <main className="flex flex-col items-center justify-between rounded-md py-5 drop-shadow-2xl">
-            <form className="w-full flex flex-col md:flex-row justify-evenly items-center mt-5">
-              <div className="flex flex-col">
-                <label className="mb-3 ml-[5rem]">البريد الإلكترونى</label>
-                <input
-                  type="email"
-                  name="email"
-                  className="px-2 py-1 outline-none"
-                  style={{ direction: "ltr" }}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="mb-3 ml-[5rem]">الكلمة السرية</label>
-                <input
-                  type="password"
-                  name="password"
-                  className="px-2 py-1 outline-none"
-                  style={{ direction: "ltr" }}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            </form>
-            <button
-              className="px-5 py-2.5 mr-2.5 mt-24 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
-              onClick={() => submit()}
-            >
-              تسجيل الدخول
-            </button>
-          </main>
-        </section>
+          <section>
+            <h1 className="heading">تسجيل الدخول إلى صفحة المالك</h1>
+            <main>
+              <form
+                method="post"
+                className="bg-[#fff] m-auto w-[300px] h-[350px] flex flex-col justify-between px-10 py-5"
+              >
+                <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
+                <div className="flex flex-col mb-2">
+                  <label htmlFor="email" className="text-lg">
+                    البريد الإلكترونى
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-2">
+                  <label htmlFor="password" className="text-lg">
+                    كلمة المرور
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
+                <button
+                  className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
+                  onClick={(e) => submit(e)}
+                >
+                  إنشاء حساب
+                </button>
+              </form>
+            </main>
+          </section>
         </>
       )}
     </>

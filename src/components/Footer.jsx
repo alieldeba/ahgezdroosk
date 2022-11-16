@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -49,11 +49,11 @@ function Footer() {
       </ul>
       <div className="mt-8">
         <p className="mt-4 sm:mt-0 text-center">
-          &copy; جميع الحقوق محفوظة لدى Ahgez {new Date().getFullYear()}
+          جميع الحقوق محفوظة لدى &copy; Ahgez {new Date().getFullYear()}
         </p>
       </div>
     </footer>
   );
 }
 
-export default React.memo(Footer)
+export default React.memo(Footer);
