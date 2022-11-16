@@ -1,120 +1,121 @@
 import axios from "axios";
 import React from "react";
-// import env from "react-dotenv";
 
 function Signup() {
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [telephone, setTelephone] = React.useState(null);
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [name, setName] = React.useState(undefined);
+  const [telephone, setTelephone] = React.useState(undefined);
+  const [email, setEmail] = React.useState(undefined);
+  const [password, setPassword] = React.useState(undefined);
+
+  const nameError = React.useRef(null);
+  const telephoneError = React.useRef(null);
+  const emailError = React.useRef(null);
+  const passwordError = React.useRef(null);
 
   const USERS_API = import.meta.env.VITE_USERS_API;
 
-  function submit() {
-    if (
-      !firstName ||
-      !lastName ||
-      !telephone ||
-      !email ||
-      !password ||
-      !confirmPassword
-    ) {
-      return alert("يرجى ملء جميع البيانات");
-    } else if (password !== confirmPassword) {
-      return alert("الرقم السرى ليس مطابقا للتأكيد");
-    } else {
-      return (
-        axios
-          .post(USERS_API, {
-            firstName,
-            lastName,
-            telephone,
-            email,
-            password,
-          })
-          .then(alert("تم إنشاء الحساب بنجاح"))
-          // .then((window.location.href = "/login"))
-          .catch((e) => console.error(e.message))
-      );
-    }
+  function submit(e) {
+    e.preventDefault();
+    axios
+      .post(USERS_API, {
+        name,
+        telephone,
+        email,
+        password,
+      })
+      .then((res) => {
+        console.log(res.data.errors);
+        if (res.data.errors) {
+          // resetting values of error texts
+          nameError.current.textContent = "";
+          telephoneError.current.textContent = "";
+          emailError.current.textContent = "";
+          passwordError.current.textContent = "";
+
+          // getting the server errors
+          const nameErrorText = res.data.errors.name;
+          const telephoneErrorText = res.data.errors.telephone;
+          const emailErrorText = res.data.errors.email;
+          const passwordErrorText = res.data.errors.password;
+
+          // inserting errors to user
+          nameError.current.textContent = nameErrorText;
+          telephoneError.current.textContent = telephoneErrorText;
+          emailError.current.textContent = emailErrorText;
+          passwordError.current.textContent = passwordErrorText;
+        }
+      })
+      .catch((e) => console.log(e.message));
   }
 
   return (
-    <>
+    <section>
       <h1 className="heading">إنشاء حساب</h1>
-      <form className="grid justify-center items-center gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 min-h-[300px] md:mr-[3rem]">
+      <form
+        method="post"
+        className="bg-[#fff] m-auto w-[350px] h-[500px] flex flex-col justify-between p-10"
+      >
+        <h3 className="text-xl text-center">Create Account</h3>
         <div className="flex flex-col">
-          <label className="mb-2">الأسم الاول</label>
+          <label htmlFor="name" className="text-lg">
+            Name
+          </label>
           <input
             type="text"
-            name="firstName"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
-            onChange={(e) => setFirstName(e.target.value)}
+            name="name"
+            onChange={(e) => setName(e.target.value)}
           />
+          <p className="text-danger" ref={nameError}>
+            Error
+          </p>
         </div>
         <div className="flex flex-col">
-          <label className="mb-2">الأسم الاخير</label>
-          <input
-            type="text"
-            name="secondName"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-2">رقم الهاتف</label>
+          <label htmlFor="telephone" className="text-lg">
+            Telephone
+          </label>
           <input
             type="tel"
             name="telephone"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
             onChange={(e) => setTelephone(e.target.value)}
           />
+          <p className="text-danger text-md" ref={telephoneError}>
+            Error
+          </p>
         </div>
         <div className="flex flex-col">
-          <label className="mb-2">البريد الإلكترونى</label>
+          <label htmlFor="email" className="text-lg">
+            Email
+          </label>
           <input
             type="email"
             name="email"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <p className="text-danger" ref={emailError}>
+            Error
+          </p>
         </div>
         <div className="flex flex-col">
-          <label className="mb-2">الكلمة السرية</label>
+          <label htmlFor="password" className="text-lg">
+            Password
+          </label>
           <input
             type="password"
             name="password"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <p className="text-danger" ref={passwordError}>
+            Error
+          </p>
         </div>
-        <div className="flex flex-col">
-          <label className="mb-2">تأكيد الكلمة السرية</label>
-          <input
-            type="password"
-            name="password"
-            className="outline-none px-2 py-1 w-[300px]"
-            style={{ direction: "ltr" }}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-      </form>
-      <div className="flex w-full justify-center">
         <button
-          className="px-5 py-2.5 mr-2.5 text-[#fff] bg-success duration-150 active:shadow-lg mt-5 lg:mt-0"
-          onClick={() => submit()}
+          className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
+          onClick={(e) => submit(e)}
         >
           إنشاء حساب
         </button>
-      </div>
-    </>
+      </form>
+    </section>
   );
 }
 

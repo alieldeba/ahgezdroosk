@@ -17,6 +17,15 @@ img {
 }
 input {
   color: #0075ff;
+  outline: none;
+  border: #0075ff 1px solid;
+  border-radius: 2px;
+  direction: ltr;
+  padding: 2px;
+}
+form {
+  direction: ltr;
+  border: dashed 2px #0075ff;
 }
 
 /* Scrollbar Styles */
