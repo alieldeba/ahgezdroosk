@@ -12,12 +12,12 @@ function Signup() {
   const emailError = React.useRef(null);
   const passwordError = React.useRef(null);
 
-  const USERS_API = import.meta.env.VITE_USERS_API;
+  const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
   function submit(e) {
     e.preventDefault();
     axios
-      .post(USERS_API, {
+      .post(`${BASE_API_URL}/users/register`, {
         name,
         telephone,
         email,

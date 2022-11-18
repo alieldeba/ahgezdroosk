@@ -5,26 +5,15 @@ function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const USERS_API = import.meta.env.VITE_USERS_API;
+  const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
   function submit(e) {
     e.preventDefault();
-    // const allSystemUsers = await axios
-    //   .get(USERS_API)
-    //   .then((res) => res.data)
-    //   .catch((error) => console.log(error.message));
 
-    // const logingUser = allSystemUsers.filter(
-    //   (user) => user.email === email && user.password === password
-    // );
-
-    // if (logingUser.length > 0) {
-    //   alert("تم تسجيل الدخول ✔");
-    //   window.location.href = "/profile";
-    // } else {
-    //   alert("لم يتم تسجيل الدخول ❌");
-    // }
-    // console.log(logingUser);
+    axios
+      .post(`${BASE_API_URL}/users/login`)
+      .then((res) => alert(res.data))
+      .catch((e) => alert(e.response.data.err));
   }
 
   return (
@@ -55,8 +44,11 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]" onClick={(e) => submit(e)}>
-         تسجيل الدخول
+        <button
+          className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
+          onClick={(e) => submit(e)}
+        >
+          تسجيل الدخول
         </button>
       </form>
     </section>
