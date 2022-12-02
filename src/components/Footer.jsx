@@ -30,7 +30,7 @@ function Footer() {
     <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto mt-24">
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <img
-          src="https://www.floatui.com/logo.svg"
+          src="/images/logo.png"
           className="w-32 sm:mx-auto"
           loading="lazy"
         />

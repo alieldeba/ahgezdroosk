@@ -16,10 +16,10 @@ function Header() {
         <div className="flex justify-between">
           <Link to="/">
             <img
-              src="https://floatui.com/logo.svg"
+              src="/images/logo.png"
               width={120}
               height={50}
-              alt="Float UI logo"
+              alt="logo"
             />
           </Link>
           <button

@@ -1,7 +1,7 @@
 import React from "react";
 const License = React.lazy(() => import("../components/License"));
 
-function UserProfile() {
+function UserProfile(props) {
   return (
     <>
       <section>
@@ -13,6 +13,10 @@ function UserProfile() {
           className="rounded-full m-auto mb-5"
           width={100}
         />
+        <h3>{props.info.name}</h3>
+        <h3>{props.info.email}</h3>
+        <h3>{props.info.telephone}</h3>
+        <h3>{props.info.date}</h3>
       </section>
       <License
         links={[
