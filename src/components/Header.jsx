@@ -17,7 +17,7 @@ function Header() {
           <Link to="/">
             <img
               src="/images/logo.png"
-              width={120}
+              width={50}
               height={50}
               alt="logo"
             />
