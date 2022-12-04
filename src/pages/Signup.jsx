@@ -14,8 +14,51 @@ function Signup() {
 
   const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
-  function submit(e) {
+  function validation(e) {
+    let isDataOk = true;
     e.preventDefault();
+
+    // Resetting values of error texts
+    nameError.current.textContent = "";
+    telephoneError.current.textContent = "";
+    emailError.current.textContent = "";
+    passwordError.current.textContent = "";
+
+    // Name length [3, 25]
+    // Telephone must be 11 characters starting with 010 or 012
+    // Email must be unique
+    // Password must be more than 6 characters
+
+    // Making Errors
+    // Name Error
+    if (!name || name.length < 3 || name.length > 25) {
+      nameError.current.textContent =
+        "يرجى إدخال اسم لا يزيد او يقل عن [3 - 25] حرف";
+        isDataOk = false;
+    }
+    // Telephone Error
+    if (!telephone || telephone.length != 11) {
+      telephoneError.current.textContent =
+      "عذراً رقم الهاتف غير صحيح";
+      isDataOk = false
+    }
+    // Email Error
+
+    // Password Error
+    if (!password || password.length < 6) {
+      passwordError.current.textContent = "كلمة المرور يجب ان تكون 6 حروف فأكثر"
+      isDataOk = false;
+    }
+
+    // Submiting data
+    if (isDataOk) {
+      submit()
+    } else {
+      return;
+    }
+  }
+
+  function submit() {
     axios
       .post(`${BASE_API_URL}/users/register`, {
         name,
@@ -25,27 +68,6 @@ function Signup() {
       })
       .then((res) => {
         console.log(res.data.errors);
-        if (res.data.errors) {
-          // resetting values of error texts
-          nameError.current.textContent = "";
-          telephoneError.current.textContent = "";
-          emailError.current.textContent = "";
-          passwordError.current.textContent = "";
-
-          // getting the server errors
-          const nameErrorText = res.data.errors.name;
-          const telephoneErrorText = res.data.errors.telephone;
-          const emailErrorText = res.data.errors.email;
-          const passwordErrorText = res.data.errors.password;
-
-          // inserting errors to user
-          nameError.current.textContent = nameErrorText;
-          telephoneError.current.textContent = telephoneErrorText;
-          emailError.current.textContent = emailErrorText;
-          passwordError.current.textContent = passwordErrorText;
-        } else {
-          alert("تم إنشاء الحساب بنجاح 🎉");
-        }
       })
       .catch((e) => console.log(e.message));
   }
@@ -55,7 +77,7 @@ function Signup() {
       <h1 className="heading">إنشاء حساب</h1>
       <form
         method="post"
-        className="bg-[#fff] m-auto w-[300px] h-[500px] flex flex-col justify-between px-10 py-5"
+        className="bg-[#fff] m-auto min-h-[500px] flex flex-col justify-between px-10 py-5"
       >
         <h3 className="text-xl text-center mb-5">إنشاء حساب</h3>
         <div className="flex flex-col mb-2">
@@ -104,7 +126,7 @@ function Signup() {
         </div>
         <button
           className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
-          onClick={(e) => submit(e)}
+          onClick={(e) => validation(e)}
         >
           إنشاء حساب
         </button>

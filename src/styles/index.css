@@ -23,7 +23,8 @@ input {
   padding: 2px 5px;
 }
 form {
-  border: dashed 2px #0075ff;
+  border: solid 1px #0075ff;
+  width: 275px;
 }
 
 /* Scrollbar Styles */

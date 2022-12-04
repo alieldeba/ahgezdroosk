@@ -21,7 +21,7 @@ function Login() {
       <h1 className="heading">تسجيل الدخول</h1>
       <form
         method="post"
-        className="bg-[#fff] m-auto w-[300px] h-[350px] flex flex-col justify-between px-10 py-5"
+        className="bg-[#fff] m-auto h-[350px] flex flex-col justify-between px-10 py-5"
       >
         <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
         <div className="flex flex-col mb-2">

@@ -31,14 +31,11 @@ function Footer() {
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <img
           src="/images/logo.png"
-          className="w-32 sm:mx-auto"
+          className="m-auto"
           loading="lazy"
+          width={100}
+          height={100}
         />
-        {/* <p className="leading-relaxed mt-2 text-[15px]">
-          كان هو النص الوهمي القياسي في الصناعة منذ القرن الخامس عشر الميلادي ،
-          عندما أخذت طابعة غير معروفة لوحًا من النوع وتدافعت عليه لعمل كتاب
-          عينة.
-        </p> */}
       </div>
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-x-reverse sm:space-y-0">
         {footerNavs.map((item, idx) => (
