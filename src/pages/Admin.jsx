@@ -1,4 +1,7 @@
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const AdminDashboard = React.lazy(() => import("./AdminDashboard"));
 
 function Admin() {
@@ -11,12 +14,30 @@ function Admin() {
 
   function submit(e) {
     e.preventDefault();
-    if ((!email, !password)) {
-      alert("يرجى إدخال جميع البيانات 🙄");
+    if (!email || !password) {
+      toast.info("يرجى ملء جميع البيانات 🙄", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } else if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
       setIsLoggedIn(true);
     } else {
-      alert("هنالك خطأ فى البريد الإلكترونى او كلمة المرور 😔");
+      toast.error("خطأ فى تسجيل الدخول ❌", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 
@@ -27,11 +48,23 @@ function Admin() {
       ) : (
         <>
           <section>
+            <ToastContainer
+              position="top-left"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="colored"
+            />
             <h1 className="heading">تسجيل الدخول إلى صفحة المالك</h1>
             <main>
               <form
                 method="post"
-                className="bg-[#fff] m-auto w-[300px] h-[350px] flex flex-col justify-between px-10 py-5"
+                className="bg-[#fff] m-auto h-[350px] flex flex-col justify-between px-10 py-5"
               >
                 <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
                 <div className="flex flex-col mb-2">

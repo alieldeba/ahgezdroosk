@@ -13,6 +13,8 @@ const UserProfile = React.lazy(() => import("./pages/UserProfile"));
 const Groups = React.lazy(() => import("./pages/Groups"));
 const Login = React.lazy(() => import("./pages/Login"));
 const Signup = React.lazy(() => import("./pages/Signup"));
+const StudentSignup = React.lazy(() => import("./pages/StudentSignup"));
+const TeacherSignup = React.lazy(() => import("./pages/TeacherSignup"));
 const UserManual = React.lazy(() => import("./pages/UserManual"));
 const Admin = React.lazy(() => import("./pages/Admin"));
 const Error = React.lazy(() => import("./pages/Error"));
@@ -39,6 +41,8 @@ function App() {
           <Route path="groups" element={<Groups />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="signup/student" element={<StudentSignup />} />
+          <Route path="signup/teacher" element={<TeacherSignup />} />
           <Route path="user-manual" element={<UserManual />} />
           <Route path="admin" element={<Admin />} />
           {users &&
