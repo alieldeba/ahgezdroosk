@@ -8,8 +8,8 @@ function License() {
     <a href="https://www.flaticon.com/free-icons/home" title="home icons">
       Home icons created by Freepik - Flaticon
     </a>,
-    <a href="https://www.flaticon.com/free-icons/emoji" title="emoji icons">
-      Emoji icons created by Freepik - Flaticon
+    <a href="https://www.flaticon.com/free-icons/brain" title="brain icons">
+      Brain icons created by Freepik - Flaticon
     </a>,
     <a href="https://www.flaticon.com/free-icons/easy" title="easy icons">
       Easy icons created by Freepik - Flaticon
@@ -42,9 +42,12 @@ function License() {
   return (
     <section>
       <h1 className="heading">حقوق الصور</h1>
-      {links.map((link, index) => (
+      {/* {links.map((link, index) => (
         <div key={index}>{link}</div>
-      ))}
+      ))} */}
+      <a href="https://www.flaticon.com/" title="flaticons">
+      Icons created by Freepik - Flaticon
+    </a>
     </section>
   );
 }

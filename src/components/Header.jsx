@@ -5,9 +5,9 @@ function Header() {
   const [state, setState] = React.useState(false);
 
   const navigation = [
-    { title: "القائمة الرئيسية", path: "/" },
-    { title: "المجموعات", path: "/groups" },
+    { title: "الصفحة الرئيسية", path: "/" },
     { title: "دليل الإستخدام", path: "/user-manual" },
+    { title: "المعلمون", path: "/teachers" },
   ];
 
   return (

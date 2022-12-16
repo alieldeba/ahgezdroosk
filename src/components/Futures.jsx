@@ -36,7 +36,7 @@ function Futures() {
           img="/images/money.png"
           alt="نقود"
           title="أسعار مميزة"
-          desc="منصة أحجز تقدم أفضل خدمة مقابل سعر بسيط سنوياً"
+          desc="منصة أحجز تقدم أفضل خدمة مقابل دفع المعلمين سعر بسيط سنوياً"
         />
         <FuturesCard
           img="/images/society.png"

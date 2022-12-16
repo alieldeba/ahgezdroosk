@@ -37,21 +37,20 @@ function App() {
   return (
     <>
       <Header />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="profile" element={<UserProfile />} /> */}
-          <Route path="groups" element={<Groups />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="signup/student" element={<StudentSignup />} />
-          <Route path="signup/teacher" element={<TeacherSignup />} />
-          <Route path="login" element={<Login />} />
-          <Route path="login/student" element={<StudentLogin />} />
-          <Route path="login/teacher" element={<TeacherLogin />} />
-          <Route path="user-manual" element={<UserManual />} />
-          <Route path="license" element={<License />} />
-          <Route path="admin" element={<Admin />} />
-          {/* {users &&
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="profile" element={<UserProfile />} /> */}
+        <Route path="groups" element={<Groups />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="signup/student" element={<StudentSignup />} />
+        <Route path="signup/teacher" element={<TeacherSignup />} />
+        <Route path="login" element={<Login />} />
+        <Route path="login/student" element={<StudentLogin />} />
+        <Route path="login/teacher" element={<TeacherLogin />} />
+        <Route path="user-manual" element={<UserManual />} />
+        <Route path="license" element={<License />} />
+        <Route path="admin" element={<Admin />} />
+        {/* {users &&
             users.map((user, index) => (
               <Route
                 path={`users/${user.name}`}
@@ -59,9 +58,8 @@ function App() {
                 key={index}
               />
             ))} */}
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </div>
+        <Route path="*" element={<Error />} />
+      </Routes>
       <Footer />
     </>
   );
