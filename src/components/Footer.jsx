@@ -24,6 +24,10 @@ function Footer() {
       href: "/login",
       name: "تسجيل الدخول",
     },
+    {
+      href: "/license",
+      name: "الحقوق",
+    },
   ];
 
   return (
@@ -31,10 +35,11 @@ function Footer() {
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <img
           src="/images/logo.png"
+          alt="أحجز"
           className="m-auto"
           loading="lazy"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
         />
       </div>
       <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-x-reverse sm:space-y-0">

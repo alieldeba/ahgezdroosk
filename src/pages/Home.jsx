@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import React from "react";
 const Hero = React.lazy(() => import("../components/Hero"));
 const Futures = React.lazy(() => import("../components/Futures"));
-const License = React.lazy(() => import("../components/License"));
+// const License = React.lazy(() => import("../components/License"));
 
 function Home() {
   return (
     <>
       <Hero />
       <Futures />
-      <License
+      {/* <License
         links={[
           <a
             href="https://www.flaticon.com/free-icons/clock"
@@ -30,7 +30,7 @@ function Home() {
             Easy icons created by Freepik - Flaticon
           </a>,
         ]}
-      />
+      /> */}
     </>
   );
 }

@@ -14,9 +14,13 @@ function UserManual() {
         <h3 className="text-lg">
           التسجيل يكون بحساب واحد فقط ولا يصح التسجيل بعدة حسابات
         </h3>
+        <NumberBox number="3" />
+        <h3 className="text-lg">
+          يجب التسجيل بمعلوماتك الحقيقية عند إنشاء الحساب
+        </h3>
       </section>
     </>
   );
 }
 
-export default React.memo(UserManual)
+export default React.memo(UserManual);

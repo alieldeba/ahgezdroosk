@@ -1,56 +1,23 @@
-import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
+const FuturesCard = React.lazy(() => import("../components/FuturesCard"));
 
 function Login() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-
-  const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
-
-  function submit(e) {
-    e.preventDefault();
-
-    axios
-      .post(`${BASE_API_URL}/users/login`)
-      .then((res) => alert(res.data))
-      .catch((e) => alert(e.response.data.err));
-  }
-
   return (
     <section>
-      <h1 className="heading">تسجيل الدخول</h1>
-      <form
-        method="post"
-        className="bg-[#fff] m-auto h-[350px] flex flex-col justify-between px-10 py-5"
-      >
-        <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="email" className="text-lg">
-            البريد الإلكترونى
-          </label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="password" className="text-lg">
-            كلمة المرور
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button
-          className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
-          onClick={(e) => submit(e)}
+      <h1 className="heading">أختر طريقة تسجيل دخولك</h1>
+      <div className="flex flex-col md:flex-row mt-10 items-center justify-center">
+        <Link
+          to="/login/student"
+          className="text-3xl mb-5 md:ml-10 md:mb-0"
+          title="طالب"
         >
-          تسجيل الدخول
-        </button>
-      </form>
+          <FuturesCard img="/images/student.png" imgWidth="150" alt="طالب" />
+        </Link>
+        <Link to="/login/teacher" className="text-3xl" title="معلم">
+          <FuturesCard img="/images/teacher.png" imgWidth="150" alt="معلم" />
+        </Link>
+      </div>
     </section>
   );
 }

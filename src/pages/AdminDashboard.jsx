@@ -1,6 +1,5 @@
 import React from "react";
 const FuturesCard = React.lazy(() => import("../components/FuturesCard"));
-const License = React.lazy(() => import("../components/License"));
 
 function AdminDashboard() {
   return (
@@ -16,22 +15,6 @@ function AdminDashboard() {
           </div>
         </main>
       </section>
-      <License
-        links={[
-          <a
-            href="https://www.flaticon.com/free-icons/people"
-            title="people icons"
-          >
-            People icons created by Freepik - Flaticon
-          </a>,
-          <a
-            href="https://www.flaticon.com/free-icons/new-post"
-            title="new post icons"
-          >
-            New post icons created by Freepik - Flaticon
-          </a>,
-        ]}
-      />
     </>
   );
 }
