@@ -32,9 +32,21 @@ function Futures() {
           title="سهولة الإستخدام"
           desc="أحجز بسهولة فى هذا الموقع فقط لا تحتاج الى شرح كيفية الإستخدام او ما الى ذلك"
         />
+        <FuturesCard
+          img="/images/money.png"
+          alt="نقود"
+          title="أسعار مميزة"
+          desc="منصة أحجز تقدم أفضل خدمة مقابل سعر بسيط سنوياً"
+        />
+        <FuturesCard
+          img="/images/society.png"
+          alt="ملتقى"
+          title="ملتقى التجمعات"
+          desc="منصة أحجز هى ملتقى لجميع المعلمين و الطلاب"
+        />
       </div>
     </section>
   );
 }
 
-export default React.memo(Futures)
+export default React.memo(Futures);

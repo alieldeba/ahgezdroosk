@@ -9,28 +9,7 @@ function Home() {
     <>
       <Hero />
       <Futures />
-      {/* <License
-        links={[
-          <a
-            href="https://www.flaticon.com/free-icons/clock"
-            title="clock icons"
-          >
-            Clock icons created by Freepik - Flaticon
-          </a>,
-          <a href="https://www.flaticon.com/free-icons/home" title="home icons">
-            Home icons created by Freepik - Flaticon
-          </a>,
-          <a
-            href="https://www.flaticon.com/free-icons/emoji"
-            title="emoji icons"
-          >
-            Emoji icons created by Freepik - Flaticon
-          </a>,
-          <a href="https://www.flaticon.com/free-icons/easy" title="easy icons">
-            Easy icons created by Freepik - Flaticon
-          </a>,
-        ]}
-      /> */}
+      <h3 className="heading">هدف المنصة</h3>
     </>
   );
 }

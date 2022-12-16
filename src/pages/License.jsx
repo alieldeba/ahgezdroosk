@@ -14,6 +14,12 @@ function License() {
     <a href="https://www.flaticon.com/free-icons/easy" title="easy icons">
       Easy icons created by Freepik - Flaticon
     </a>,
+    <a href="https://www.flaticon.com/free-icons/coin" title="coin icons">
+      Coin icons created by Freepik - Flaticon
+    </a>,
+    <a href="https://www.flaticon.com/free-icons/society" title="Society icons">
+      Society icons created by Flat Icons - Flaticon
+    </a>,
     <a href="https://www.flaticon.com/free-icons/people" title="people icons">
       People icons created by Freepik - Flaticon
     </a>,
@@ -30,8 +36,8 @@ function License() {
       Teacher icons created by Freepik - Flaticon
     </a>,
     <a href="https://www.flaticon.com/free-icons/user" title="user icons">
-            User icons created by Freepik - Flaticon
-          </a>,
+      User icons created by Freepik - Flaticon
+    </a>,
   ];
   return (
     <section>
