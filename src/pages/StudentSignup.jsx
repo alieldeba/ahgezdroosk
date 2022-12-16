@@ -38,7 +38,7 @@ function StudentSignup() {
     if (
       !telephone ||
       telephone.length != 11 ||
-      (!telephone.startsWith("010") && !telephone.startsWith("012"))
+      (!telephone.startsWith("010") && !telephone.startsWith("012") && !telephone.startsWith("011") && !telephone.startsWith("015"))
     ) {
       telephoneError.current.textContent = "رقم الهاتف غير صحيح";
       isDataOk = false;
