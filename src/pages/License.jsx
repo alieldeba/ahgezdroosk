@@ -40,15 +40,17 @@ function License() {
     </a>,
   ];
   return (
-    <section>
+    <>
       <h1 className="heading">حقوق الصور</h1>
-      {/* {links.map((link, index) => (
-        <div key={index}>{link}</div>
-      ))} */}
-      <a href="https://www.flaticon.com/" title="flaticons">
+      <section className="container">
+        {links.map((link, index) => (
+          <div key={index}>{link}</div>
+        ))}
+        {/* <a href="https://www.flaticon.com/" title="flaticons">
       Icons created by Freepik - Flaticon
-    </a>
-    </section>
+    </a> */}
+      </section>
+    </>
   );
 }
 

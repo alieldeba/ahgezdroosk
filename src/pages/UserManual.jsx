@@ -4,8 +4,8 @@ const NumberBox = React.lazy(() => import("../components/NumberBox"));
 function UserManual() {
   return (
     <>
-      <section>
-        <h1 className="heading">دليل الإستخدام</h1>
+      <h1 className="heading">دليل الإستخدام</h1>
+      <section className="container">
         <NumberBox number="1" />
         <h3 className="text-lg">
           الحجز يكون فى هذا الموقع لكن تأكيد الحجز يكون فى مقر المستر

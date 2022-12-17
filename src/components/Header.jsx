@@ -8,6 +8,7 @@ function Header() {
     { title: "الصفحة الرئيسية", path: "/" },
     { title: "دليل الإستخدام", path: "/user-manual" },
     { title: "المعلمون", path: "/teachers" },
+    { title: "الأسعار", path: "/prices" },
   ];
 
   return (
@@ -15,12 +16,7 @@ function Header() {
       <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 md:space-x-reverse">
         <div className="flex justify-between">
           <Link to="/">
-            <img
-              src="/images/logo.png"
-              width={50}
-              height={50}
-              alt="ahgez"
-            />
+            <img src="/images/logo.png" width={50} height={50} alt="ahgez" />
           </Link>
           <button
             className="text-gray-500 outline-none md:hidden"
@@ -65,13 +61,12 @@ function Header() {
           }`}
         >
           <li className="order-2 pb-5 md:pb-0">
-
-              <Link
-                to="/signup"
-                className="py-3 px-6 rounded-md shadow-md text-[#fff] text-center bg-primary focus:shadow-none block md:inline"
-              >
-                إنشاء حساب
-              </Link>
+            <Link
+              to="/signup"
+              className="py-3 px-6 rounded-md shadow-md text-[#fff] text-center bg-primary focus:shadow-none block md:inline"
+            >
+              إنشاء حساب
+            </Link>
           </li>
           <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-x-reverse md:space-y-0">
             {navigation.map((item, idx) => (

@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Hero() {
   return (
-    <section className="my-24 mx-auto max-w-screen-xl pb-4 px-4 sm:px-8">
+    <section className="flex flex-col justify-center items-center mx-auto max-w-screen-xl h-[calc(100vh_-_100px)] pb-4 px-4 sm:px-8">
       <div className="text-center space-y-4">
         <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
           أحجز اونلاين لتعليم
@@ -33,4 +33,4 @@ function Hero() {
   );
 }
 
-export default React.memo(Hero)
+export default React.memo(Hero);

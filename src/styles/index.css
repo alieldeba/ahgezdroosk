@@ -6,6 +6,9 @@
 html {
   scroll-behavior: smooth;
 }
+::selection {
+  background-color: #ffcc66db;
+}
 body {
   background-color: #eee;
   font-family: "Cairo", sans-serif;

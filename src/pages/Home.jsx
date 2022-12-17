@@ -2,19 +2,23 @@ import { Link } from "react-router-dom";
 import React from "react";
 const Hero = React.lazy(() => import("../components/Hero"));
 const Futures = React.lazy(() => import("../components/Futures"));
+const OurGoal = React.lazy(() => import("../components/OurGoal"));
 
 function Home() {
   return (
     <>
       <Hero />
       <Futures />
-      <h3 className="heading">هدف المنصة</h3>
-      <div className="bg-primary text-center py-10 text-[#fff]">
-        <p>
-          هدفنا هو تطوير التعليم فى مصر و سهولة إقامة المجموعات للمدرسين و سهولة
-          الحجز للطلاب فيها
-        </p>
-      </div>
+      <OurGoal />
+      <h3 className="heading">كيف تعمل المنصة ؟</h3>
+      <iframe
+      className="m-auto mt-5 max-w-[560px] aspect-video"
+        src="https://www.youtube.com/embed/NeHu899_uYA"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </>
   );
 }

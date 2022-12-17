@@ -9,6 +9,8 @@ const Footer = React.lazy(() => import("./components/Footer"));
 
 // Pages
 const Home = React.lazy(() => import("./pages/Home"));
+const Teachers = React.lazy(() => import("./pages/Teachers"));
+const Prices = React.lazy(() => import("./pages/Prices"));
 const UserProfile = React.lazy(() => import("./pages/UserProfile"));
 const Groups = React.lazy(() => import("./pages/Groups"));
 const Login = React.lazy(() => import("./pages/Login"));
@@ -23,24 +25,14 @@ const License = React.lazy(() => import("./pages/License"));
 const Error = React.lazy(() => import("./pages/Error"));
 
 function App() {
-  const [users, setUsers] = React.useState([]);
-
-  const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
-
-  React.useEffect(() => {
-    axios
-      .get(`${BASE_API_URL}/users`)
-      .then((res) => setUsers(res.data.users))
-      .catch((e) => console.log(e));
-  }, []);
-
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="profile" element={<UserProfile />} /> */}
         <Route path="groups" element={<Groups />} />
+        <Route path="prices" element={<Prices />} />
+        <Route path="teachers" element={<Teachers />} />
         <Route path="signup" element={<Signup />} />
         <Route path="signup/student" element={<StudentSignup />} />
         <Route path="signup/teacher" element={<TeacherSignup />} />
@@ -50,14 +42,6 @@ function App() {
         <Route path="user-manual" element={<UserManual />} />
         <Route path="license" element={<License />} />
         <Route path="admin" element={<Admin />} />
-        {/* {users &&
-            users.map((user, index) => (
-              <Route
-                path={`users/${user.name}`}
-                element={<UserProfile info={user} />}
-                key={index}
-              />
-            ))} */}
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
