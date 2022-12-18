@@ -12,7 +12,7 @@ function Home() {
       <OurGoal />
       <h3 className="heading">كيف تعمل المنصة ؟</h3>
       <iframe
-      className="m-auto mt-5 max-w-[560px] aspect-video"
+      className="m-auto mt-5 aspect-video md:w-[560px] md:h-[315px]"
         src="https://www.youtube.com/embed/NeHu899_uYA"
         title="YouTube video player"
         frameborder="0"
