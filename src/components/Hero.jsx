@@ -7,7 +7,7 @@ function Hero() {
       <section className="flex flex-col justify-center items-center relative mx-auto max-w-screen-xl h-[calc(100vh_-_100px)] pb-4 px-4 sm:px-8">
         <img
           src="/3d/donut.png"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 hidden sm:block"
           alt="خلفية"
           loading="lazy"
         />
