@@ -2,7 +2,7 @@ import React from "react";
 
 function FuturesCard(props) {
   return (
-    <div className="p-5 w-[250px] h-[200px] bg-[#e6e6e6] rounded-sm text-center m-auto">
+    <div className="p-5 w-[250px] h-[220px] bg-[#e6e6e6] rounded-sm text-center m-auto">
       <img
         src={props.img}
         className="m-auto mb-2"
