@@ -10,7 +10,7 @@ const Footer = React.lazy(() => import("./components/Footer"));
 // Pages
 const Home = React.lazy(() => import("./pages/Home"));
 const Teachers = React.lazy(() => import("./pages/Teachers"));
-const Prices = React.lazy(() => import("./pages/Prices"));
+const Subscriptions = React.lazy(() => import("./pages/Subscriptions"));
 const UserProfile = React.lazy(() => import("./pages/UserProfile"));
 const Groups = React.lazy(() => import("./pages/Groups"));
 const Login = React.lazy(() => import("./pages/Login"));
@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="groups" element={<Groups />} />
-        <Route path="prices" element={<Prices />} />
+        <Route path="subscriptions" element={<Subscriptions />} />
         <Route path="teachers" element={<Teachers />} />
         <Route path="signup" element={<Signup />} />
         <Route path="signup/student" element={<StudentSignup />} />

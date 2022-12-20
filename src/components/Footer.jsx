@@ -51,7 +51,7 @@ function Footer() {
       </ul>
       <div className="mt-8">
         <p className="mt-4 sm:mt-0 text-center">
-          الحقوق محفوظة لمنصة احجز © {new Date().getFullYear()}
+          الحقوق محفوظة لمنصة احجز © 2022 - {new Date().getFullYear()}
         </p>
       </div>
     </footer>

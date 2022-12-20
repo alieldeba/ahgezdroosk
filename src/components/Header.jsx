@@ -8,7 +8,7 @@ function Header() {
     { title: "الصفحة الرئيسية", path: "/" },
     { title: "دليل الإستخدام", path: "/user-manual" },
     { title: "المعلمون", path: "/teachers" },
-    { title: "الأسعار", path: "/prices" },
+    { title: "الإشتراكات", path: "/subscriptions" },
   ];
 
   return (
