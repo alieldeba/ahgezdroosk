@@ -11,7 +11,7 @@ function SubscriptionsCard(props) {
         <p className="text-xl">{props.students} طالب</p>
         <p className="text-xl">{props.groups} مجموعات</p>
         <div>
-          <del>300 ج.م/شهرياً</del>
+          {props.offer && <del>{props.offer} ج.م/شهرياً</del>}
           <p className="text-xl">{props.price} ج.م/شهرياً</p>
         </div>
       </div>

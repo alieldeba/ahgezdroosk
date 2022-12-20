@@ -31,14 +31,14 @@ function Footer() {
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <img
           src="/images/logo.png"
-          alt="أحجز"
+          alt="أحجز دروسك"
           className="m-auto"
           loading="lazy"
           width={80}
           height={80}
         />
         <p className="leading-relaxed text-secondary mt-2 text-[15px]">
-          منصة أحجز تعتبر هى المنصة الأولى من نوعها لتنظيم نظام حجز الطلاب فى
+          منصة أحجز دروسك تعتبر هى المنصة الأولى من نوعها لتنظيم نظام حجز الطلاب فى
           مجموعات المعلمين و يتم العمل على هذه المنصة دائماً و تطويرها
         </p>
       </div>
@@ -51,7 +51,7 @@ function Footer() {
       </ul>
       <div className="mt-8">
         <p className="mt-4 sm:mt-0 text-center">
-          الحقوق محفوظة لمنصة احجز © 2022 - {new Date().getFullYear()}
+          الحقوق محفوظة لمنصة احجز دروسك © 2022 - {new Date().getFullYear()}
         </p>
       </div>
     </footer>

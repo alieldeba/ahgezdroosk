@@ -19,7 +19,7 @@ function Futures() {
             img="/images/money.png"
             alt="نقود"
             title="أسعار مميزة"
-            desc="منصة أحجز تقدم أفضل خدمة مقابل دفع المعلمين سعر بسيط سنوياً"
+            desc="منصة أحجز تقدم أفضل خدمة مقابل دفع المعلمين سعر بسيط شهرياً أو سنوياً"
           />
           <FuturesCard
             img="/images/thinking.png"
@@ -31,7 +31,7 @@ function Futures() {
             img="/images/home.png"
             alt="بيت"
             title="من بيتك"
-            desc="لا تحتاج الى النزول من بيتك لحجز مكان ما فى هذا الدرس فقط احجز من هنا"
+            desc="لا تحتاج الى النزول من بيتك لحجز مكان ما فى الدرس. فقط احجز من هنا"
           />
           <FuturesCard
             img="/images/easy.png"
@@ -43,7 +43,7 @@ function Futures() {
             img="/images/society.png"
             alt="ملتقى"
             title="ملتقى التجمعات"
-            desc="منصة أحجز هى ملتقى لجميع المعلمين و الطلاب"
+            desc="منصة أحجز دروسك هى ملتقى لجميع المعلمين و الطلاب"
           />
         </div>
       </section>

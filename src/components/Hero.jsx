@@ -14,12 +14,12 @@ function Hero() {
         <main className="pt-[11rem]">
           <div className="text-center space-y-4">
             <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
-              منصة أحجز لتعليم
+              منصة أحجز دروسك لتعليم
               <span className="text-primary"> أفضل</span>
             </h1>
             <p className="text-gray-500 max-w-xl mx-auto leading-relaxed">
               هنالك الكثير ممن يعانون من الكسل الذى لا يدفعهم الى النزول من
-              بيتهم و حجز دروسهم, لهذا تم تصميم و تجهيز هذا الموقع لكى تحجز جميع
+              بيتهم لحجز دروسهم, لهذا تم تصميم و تجهيز هذا الموقع لكى تحجز جميع
               دروسك من بيتك
             </p>
           </div>

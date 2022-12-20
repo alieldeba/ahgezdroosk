@@ -7,33 +7,27 @@ function Subscriptions() {
   return (
     <>
       <h1 className="heading">أختر خطتك</h1>
-      <section className="container h-[calc(100vh-200px)]">
-        <div className="flex justify-center gap-24 mb-10">
-          <button className="px-6 py-3 duration-150 bg-success text-[#fff] active:shadow-lg">
-           سنوياً
-          </button>
-          <button className="px-6 py-3 duration-150 bg-success text-[#fff] active:shadow-lg">
-           شهرياً
-          </button>
-        </div>
-        <div className="flex flex-row-reverse items-center justify-center gap-5">
+      <section className="container min-h-[calc(100vh-200px)]">
+        <div className="flex flex-row-reverse items-center justify-center gap-5 flex-wrap">
           <SubscriptionsCard
             title="أقل قيمة"
-            students={50}
-            groups={3}
-            price={200}
+            students={300}
+            groups={4}
+            price={450}
           />
           <SubscriptionsCard
             title="أفضل قيمة"
-            students={200}
-            groups={5}
-            price={500}
+            students={800}
+            groups={7}
+            offer={1000}
+            price={800}
           />
           <SubscriptionsCard
             title="أعلى قيمة"
             students="∞"
-            groups="∞"
-            price={1000}
+            groups={20}
+            offer={2000}
+            price={1300}
           />
         </div>
       </section>
