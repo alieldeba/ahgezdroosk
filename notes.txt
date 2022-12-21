@@ -1,0 +1,26 @@
+-----
+Subscriptions :
+-----
+
+say that we want to take from every student 10 L.E
+and we have a starting plan for 300 student,
+so 300 * 10 = 3,000
+
+if teacher takes from every student 150 L.E minimum,
+so teacher takes 300 * 150 = 45,000 per month
+
+then teacher will take 42,000 per month after subscription this means that :
+he will take 140 L.E from every student and not 150 L.E
+
+we can also make a discount for big subscriptions
+for example instead of 3,000 we can make it 2,550
+
+------
+
+if the teacher has a huge number of students over than the planes for example 10,000 student
+so we can make him make a custom plane for him that named "pay as you go"
+
+for example the website will ask for him to enter students number
+and if number exceeds say "500" student he will take a discount
+
+discount will be made by a calculating algorithm
