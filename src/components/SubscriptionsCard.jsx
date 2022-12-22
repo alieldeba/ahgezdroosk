@@ -15,7 +15,7 @@ function SubscriptionsCard(props) {
           <p className="text-xl">{props.price} ج.م/شهرياً</p>
         </div>
       </div>
-      <button className="px-6 py-3 duration-150 bg-success text-[#fff] active:shadow-lg">
+      <button className="btn-success">
         إشترك الآن
       </button>
     </article>

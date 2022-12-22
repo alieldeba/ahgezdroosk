@@ -63,7 +63,7 @@ function Header() {
           <li className="order-2 pb-5 md:pb-0">
             <Link
               to="/signup"
-              className="py-3 px-6 rounded-md shadow-md text-[#fff] text-center bg-primary focus:shadow-none block md:inline"
+              className="btn-primary"
             >
               إنشاء حساب
             </Link>

@@ -13,7 +13,7 @@ function GroupCard(props) {
       >
         {props.open === "true" ? "متاح" : "ممتلئ"}
       </p>
-      <button className="px-6 py-3 text-[#fff] duration-150 bg-success active:shadow-lg absolute bottom-5 left-1/2 -translate-x-1/2">
+      <button className="btn-success absolute bottom-5 left-1/2 -translate-x-1/2">
         الإنضمام
       </button>
     </article>

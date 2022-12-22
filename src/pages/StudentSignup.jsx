@@ -134,7 +134,7 @@ function StudentSignup() {
           <p className="text-danger" ref={passwordError}></p>
         </div>
         <button
-          className="px-5 py-2.5 mr-2.5 mt-5 text-white bg-indigo-600 duration-150 bg-success active:shadow-lg text-[#fff]"
+          className="btn-success"
           onClick={(e) => validation(e)}
         >
           إنشاء حساب

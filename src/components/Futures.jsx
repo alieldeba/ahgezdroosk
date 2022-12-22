@@ -6,9 +6,9 @@ const FuturesCard = React.lazy(() => import("./FuturesCard"));
 function Futures() {
   return (
     <>
-      <h3 className="heading mb-5">المميزات</h3>
+      <h3 className="heading">المميزات</h3>
       <section className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid futures gap-10">
           <FuturesCard
             img="/images/clock.png"
             alt="ساعة"

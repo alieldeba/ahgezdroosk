@@ -9,13 +9,13 @@ function BeginningScreen() {
       <div className="flex mt-5">
         <Link
           to="/login"
-          className="px-5 py-2.5 ml-2.5 text-white bg-success duration-150 active:shadow-lg"
+          className="btn-primary"
         >
           تسجيل الدخول
         </Link>
         <Link
           to="/signup"
-          className="px-5 py-2.5 mr-2.5 text-white bg-success duration-150 active:shadow-lg"
+          className="btn-primary"
         >
           إنشاء حساب
         </Link>

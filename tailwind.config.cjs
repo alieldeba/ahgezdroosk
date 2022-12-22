@@ -15,6 +15,7 @@ module.exports = {
       success: "#157347",
       danger: "#dc3545",
       dark: "#212529",
+      white: "#fff",
     },
     extend: {},
   },

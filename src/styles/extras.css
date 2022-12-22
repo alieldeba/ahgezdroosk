@@ -1,0 +1,24 @@
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+input {
+  outline: none;
+  border: #0075ff 1px solid;
+  border-radius: 2px;
+  direction: ltr;
+  padding: 2px 5px;
+}
+form:not(.search) {
+  border: solid 1px #0075ff;
+  width: 275px;
+}
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
+.futures {
+  grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
+}
