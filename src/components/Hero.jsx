@@ -11,7 +11,7 @@ function Hero() {
           alt="خلفية"
           loading="lazy"
         />
-        <main className="sm:pt-[11rem]">
+        <main className="mt-[8rem] sm:mt-[11rem]">
           <div className="text-center space-y-4">
             <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
               منصة أحجز دروسك لتعليم
@@ -27,10 +27,7 @@ function Hero() {
             <Link to="/signup" className="btn-primary">
               إنشاء حساب
             </Link>
-            <Link
-              to="/login"
-              className="btn-secondary"
-            >
+            <Link to="/login" className="btn-secondary">
               تسجيل الدخول
             </Link>
           </div>
