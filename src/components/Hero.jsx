@@ -11,7 +11,7 @@ function Hero() {
           alt="خلفية"
           loading="lazy"
         />
-        <main className="mt-[8rem] sm:mt-[11rem]">
+        <main className="mt-[5rem] sm:mt-[8rem] md:mt-[11rem]">
           <div className="text-center space-y-4">
             <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
               منصة أحجز دروسك لتعليم
