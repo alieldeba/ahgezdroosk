@@ -7,7 +7,7 @@ function Teachers() {
       <section className="container">
         <form method="get" className="flex justify-center search">
           <div className="w-full md:w-[500px] lg:w-[800px] relative">
-            <input type="text" name="name" className="w-full p-3 rtl" />
+            <input type="text" name="name" className="w-full p-3 rtl" placeholder="مثال : يوسف أحمد" />
             <button className="btn-primary absolute left-2 py-1 px-5 top-1/2 -translate-y-1/2">
               بحث
             </button>

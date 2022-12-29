@@ -12,14 +12,14 @@ function Header() {
   ];
 
   return (
-    <header>
-      <nav className="items-center pt-5 px-4 mx-auto max-w-screen-xl sm:px-8 md:flex md:space-x-6 md:space-x-reverse">
-        <div className="flex justify-between">
+    <header className="h-[80px]">
+      <nav className="items-center fixed pt-5 md:pt-0 w-full px-4 bg-white h-[80px] mx-auto z-10 sm:px-8 md:flex md:space-x-6 md:space-x-reverse">
+        <div className="flex justify-between items-center">
           <Link to="/">
             <img src="/images/logo.png" width={50} height={50} alt="ahgez" />
           </Link>
           <button
-            className="text-gray-500 outline-none md:hidden"
+            className="outline-none md:hidden"
             onClick={() => setState(!state)}
           >
             {state ? (
@@ -56,21 +56,21 @@ function Header() {
           </button>
         </div>
         <ul
-          className={`flex-1 justify-between mt-12 md:flex md:mt-0 ${
+          className={`md:flex-1 md:justify-between md:flex z-[9] bg-white w-full sm:w-1/2 md:w-full absolute md:static text-center h-screen md:h-auto left-0 md:left-auto md:mt-0 ${
             state ? "" : "hidden"
           }`}
         >
           <li className="order-2 pb-5 md:pb-0">
             <Link
               to="/signup"
-              className="btn-primary"
+              className="btn-primary max-w-[200px] m-auto md:m-0"
             >
               إنشاء حساب
             </Link>
           </li>
           <div className="order-1 flex-1 justify-center items-center space-y-5 md:flex md:space-x-6 md:space-x-reverse md:space-y-0">
             {navigation.map((item, idx) => (
-              <li className="text-gray-500 hover:text-indigo-600" key={idx}>
+              <li className="text-gray-500" key={idx}>
                 <Link to={item.path}>{item.title}</Link>
               </li>
             ))}

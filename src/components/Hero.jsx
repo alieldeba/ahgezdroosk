@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <>
-      <section className="relative mx-auto max-w-screen-xl min-h-[calc(100vh_-_100px)] pb-4 px-4 sm:px-8">
+      <section className="relative mx-auto max-w-screen-xl min-h-[calc(100vh-80px)] pb-4 px-4 sm:px-8">
         <img
           src="/3d/donut.png"
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 hidden sm:block"
-          alt="خلفية"
+          className="absolute left-1/2 top-0 -translate-x-1/2 hidden sm:block -z-10"
+          alt="قطعة دونت"
           loading="lazy"
         />
-        <main className="mt-[5rem] md:mt-[11rem]">
+        <main className="pt-[10rem] md:pt-[11rem]">
           <div className="text-center space-y-4">
             <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
               منصة أحجز دروسك لتعليم

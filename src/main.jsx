@@ -6,10 +6,6 @@ const App = lazy(() => import("./App"));
 import Loader from "./components/Loader";
 
 import "./styles/index.css";
-import "./styles/extras.css";
-import "./styles/global.css";
-import "./styles/print.css";
-import "./styles/scrollbar.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
