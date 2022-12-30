@@ -56,14 +56,14 @@ function Header() {
           </button>
         </div>
         <ul
-          className={`md:flex-1 md:justify-between md:flex z-[9] bg-white w-full sm:w-1/2 md:w-full absolute md:static text-center h-screen md:h-auto left-0 md:left-auto md:mt-0 ${
+          className={`md:flex-1 md:justify-between md:flex z-[9] bg-white w-full absolute md:static text-center h-screen md:h-auto left-0 md:left-auto pt-10 md:pt-0 md:mt-0 ${
             state ? "" : "hidden"
           }`}
         >
           <li className="order-2 pb-5 md:pb-0">
             <Link
               to="/signup"
-              className="btn-primary max-w-[200px] m-auto md:m-0"
+              className="btn-primary m-auto md:m-0"
             >
               إنشاء حساب
             </Link>

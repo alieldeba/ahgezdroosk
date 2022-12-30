@@ -4,7 +4,7 @@ function OurGoal() {
   return (
     <>
       <h3 className="heading">هدف المنصة</h3>
-      <div className="bg-primary text-center py-10 text-white">
+      <div className="bg-primary text-center py-10 text-white max-w-full">
         <p className="container">
           هدف المنصة هو تطوير التعليم فى مصر و سهولة إقامة المجموعات للمدرسين و سهولة
           الحجز للطلاب فيها
