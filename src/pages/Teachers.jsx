@@ -15,7 +15,7 @@ function Teachers() {
             <input
               type="text"
               name="name"
-              className="w-full p-3 rtl"
+              className="w-full p-3 pl-24 rtl"
               placeholder="مثال : يوسف أحمد"
             />
             <button className="btn-primary max-w-[80px] absolute left-2 py-1 px-5 top-1/2 -translate-y-1/2">
