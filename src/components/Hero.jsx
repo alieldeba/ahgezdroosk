@@ -11,7 +11,7 @@ function Hero() {
           alt="قطعة دونت"
           loading="lazy"
         /> */}
-        <main className="pt-[10rem] md:pt-[11rem]">
+        <main className="pt-[7rem] md:pt-[11rem]">
           <div className="text-center space-y-4">
             <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
               منصة أحجز دروسك لتعليم
