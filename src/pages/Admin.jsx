@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AdminDashboard = React.lazy(() => import("./AdminDashboard"));
 
-function Admin() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+const AdminLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
   const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
-  function submit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) {
       toast.info("يرجى ملء جميع البيانات 🙄", {
@@ -46,60 +47,65 @@ function Admin() {
       {isLoggedIn ? (
         <AdminDashboard />
       ) : (
-        <>
-          <section>
-            <ToastContainer
-              position="top-left"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="colored"
+        <div className="bg-gradient-to-br from-primary to-primarysoft min-h-screen flex flex-col justify-center items-center fixed top-0 w-full h-full z-50">
+          <ToastContainer
+            position="top-left"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+          />
+          <Link to="/" class="btn-back" title="الرجوع">
+            👈
+          </Link>
+          <form
+            className="bg-white shadow-md rounded-md p-4"
+            onSubmit={handleSubmit}
+          >
+            <h1 className="text-xl text-center font-bold text-gray-800 my-4">
+              تسجيل الدخول إلى صفحة المالك
+            </h1>
+            <label
+              htmlFor="email"
+              className="block font-bold text-gray-800 mb-2"
+            >
+              البريد الإلكتروني
+            </label>
+            <input
+              id="email"
+              className="border rounded-md p-2 w-full"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
-            <h1 className="heading">تسجيل الدخول إلى صفحة المالك</h1>
-            <main>
-              <form
-                method="post"
-                className="bg-[#fff] m-auto h-[350px] flex flex-col justify-between px-10 py-5"
-              >
-                <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
-                <div className="flex flex-col mb-2">
-                  <label htmlFor="email" className="text-lg">
-                    البريد الإلكترونى
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="flex flex-col mb-2">
-                  <label htmlFor="password" className="text-lg">
-                    كلمة المرور
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <button
-                  className="btn-success"
-                  onClick={(e) => submit(e)}
-                >
-                  تسجيل الدخول
-                </button>
-              </form>
-            </main>
-          </section>
-        </>
+            <label
+              htmlFor="password"
+              className="block font-bold text-gray-800 my-2"
+            >
+              كلمة المرور
+            </label>
+            <input
+              type="password"
+              id="password"
+              className="border rounded-md p-2 w-full"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 btn-primary m-auto"
+            >
+              تأكيد
+            </button>
+          </form>
+        </div>
       )}
     </>
   );
-}
+};
 
-export default React.memo(Admin);
+export default React.memo(AdminLogin);

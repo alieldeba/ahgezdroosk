@@ -1,11 +1,13 @@
-import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function StudentSignup() {
-  const [name, setName] = React.useState(undefined);
-  const [telephone, setTelephone] = React.useState(undefined);
-  const [email, setEmail] = React.useState(undefined);
-  const [password, setPassword] = React.useState(undefined);
+const TeacherSignup = () => {
+  const [name, setName] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const nameError = React.useRef(null);
   const telephoneError = React.useRef(null);
@@ -14,7 +16,7 @@ function StudentSignup() {
 
   const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
 
-  function validation(e) {
+  function handleSubmit(e) {
     let isDataOk = true;
     e.preventDefault();
 
@@ -31,14 +33,17 @@ function StudentSignup() {
     // Making Errors
     // Name Error
     if (!name || name.length < 3 || name.length > 25) {
-      nameError.current.textContent = "ما بين 3 إلى 25 حرف";
+      nameError.current.textContent = " الأسم ليس ما بين 3 إلى 25 حرف";
       isDataOk = false;
     }
     // Telephone Error
     if (
       !telephone ||
       telephone.length != 11 ||
-      (!telephone.startsWith("010") && !telephone.startsWith("012") && !telephone.startsWith("011") && !telephone.startsWith("015"))
+      (!telephone.startsWith("010") &&
+        !telephone.startsWith("012") &&
+        !telephone.startsWith("011") &&
+        !telephone.startsWith("015"))
     ) {
       telephoneError.current.textContent = "رقم الهاتف غير صحيح";
       isDataOk = false;
@@ -61,13 +66,32 @@ function StudentSignup() {
 
     // Submiting data
     if (isDataOk) {
-      submit();
+      toast.success("تم إنشاء الحساب بنجاح 🎉", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      addStudent();
     } else {
-      return;
+      toast.error("خطأ فى تسجيل الدخول ❌", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }
 
-  function submit() {
+  function addStudent() {
     axios
       .post(`${BASE_API_URL}/users/register`, {
         name,
@@ -82,66 +106,87 @@ function StudentSignup() {
   }
 
   return (
-    <section>
-      <h1 className="heading">إنشاء حساب طالب</h1>
+    <div className="bg-gradient-to-br from-primary to-primarysoft min-h-screen flex flex-col justify-center items-center fixed top-0 w-full h-full z-50">
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+      <Link to="/signup" class="btn-back" title="الرجوع">
+        👈
+      </Link>
       <form
-        method="post"
-        className="bg-[#fff] m-auto min-h-[500px] flex flex-col justify-between px-10 py-5"
+        className="bg-white shadow-md rounded-md p-4"
+        onSubmit={handleSubmit}
       >
-        <h3 className="text-xl text-center mb-5">إنشاء حساب</h3>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="name" className="text-lg">
-            الأسم
-          </label>
-          <input
-            type="text"
-            name="name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <p className="text-danger" ref={nameError}></p>
-        </div>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="telephone" className="text-lg">
-            رقم الهاتف
-          </label>
-          <input
-            type="tel"
-            name="telephone"
-            onChange={(e) => setTelephone(e.target.value)}
-          />
-          <p className="text-danger text-md" ref={telephoneError}></p>
-        </div>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="email" className="text-lg">
-            البريد الإلكترونى
-          </label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <p className="text-danger" ref={emailError}></p>
-        </div>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="password" className="text-lg">
-            كلمة المرور
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <p className="text-danger" ref={passwordError}></p>
-        </div>
-        <button
-          className="btn-success"
-          onClick={(e) => validation(e)}
-        >
+        <h1 className="text-xl text-center font-bold text-gray-800 my-4">
           إنشاء حساب
+        </h1>
+        <label htmlFor="name" className="block font-bold text-gray-800 mb-2">
+          الأسم
+        </label>
+        <input
+          type="text"
+          id="name"
+          className="border rounded-md p-2 w-full"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <p className="text-danger" ref={nameError}></p>
+        <label
+          htmlFor="telephone"
+          className="block font-bold text-gray-800 my-2"
+        >
+          رقم الهاتف
+        </label>
+        <input
+          type="tel"
+          id="telephone"
+          className="border rounded-md p-2 w-full"
+          value={telephone}
+          onChange={(event) => setTelephone(event.target.value)}
+        />
+        <p className="text-danger" ref={telephoneError}></p>
+        <label htmlFor="email" className="block font-bold text-gray-800 my-2">
+          البريد الإلكتروني
+        </label>
+        <input
+          id="email"
+          className="border rounded-md p-2 w-full"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <p className="text-danger" ref={emailError}></p>
+        <label
+          htmlFor="password"
+          className="block font-bold text-gray-800 my-2"
+        >
+          كلمة المرور
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="border rounded-md p-2 w-full"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <p className="text-danger" ref={passwordError}></p>
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 btn-primary m-auto"
+        >
+          تأكيد
         </button>
       </form>
-    </section>
+    </div>
   );
-}
+};
 
-export default React.memo(StudentSignup);
+export default React.memo(TeacherSignup);

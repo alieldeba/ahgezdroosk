@@ -1,58 +1,69 @@
-import React from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-function StudentLogin() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+const StudentLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const BASE_API_URL = import.meta.env.VITE_BASE_API_URL;
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  function submit(e) {
-    e.preventDefault();
+    // // Password
+    // if (!password) {
+    // } else if (password.length < 6) {
+    // }
 
-    axios
-      .post(`${BASE_API_URL}/users/login`)
-      .then((res) => alert(res.data))
-      .catch((e) => alert(e.response.data.err));
-  }
+    // // Email
+    // if (!email) {
+    // } else if (
+    //   !email.match(
+    //     /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/
+    //   )
+    // ) {
+    // }
+  };
 
   return (
-    <section>
-      <h1 className="heading">تسجيل الدخول إلى حساب طالب</h1>
+    <div className="bg-gradient-to-br from-primary to-primarysoft min-h-screen flex flex-col justify-center items-center fixed top-0 w-full h-full z-50">
+      <Link to="/login" class="btn-back" title="الرجوع">👈</Link>
       <form
-        method="post"
-        className="bg-[#fff] m-auto h-[350px] flex flex-col justify-between px-10 py-5"
+        className="bg-white shadow-md rounded-md p-4"
+        onSubmit={handleSubmit}
       >
-        <h3 className="text-xl text-center mb-5">تسجيل الدخول</h3>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="email" className="text-lg">
-            البريد الإلكترونى
-          </label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="flex flex-col mb-2">
-          <label htmlFor="password" className="text-lg">
-            كلمة المرور
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button
-          className="btn-success"
-          onClick={(e) => submit(e)}
-        >
+        <h1 className="text-xl text-center font-bold text-gray-800 my-4">
           تسجيل الدخول
+        </h1>
+        <label htmlFor="email" className="block font-bold text-gray-800 mb-2">
+          البريد الإلكتروني
+        </label>
+        <input
+          id="email"
+          className="border rounded-md p-2 w-full"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <label
+          htmlFor="password"
+          className="block font-bold text-gray-800 my-2"
+        >
+          كلمة المرور
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="border rounded-md p-2 w-full"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4 btn-primary m-auto"
+        >
+         تأكيد
         </button>
       </form>
-    </section>
+    </div>
   );
-}
+};
 
 export default React.memo(StudentLogin);

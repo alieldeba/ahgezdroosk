@@ -16,6 +16,9 @@
   .btn-secondary {
     @apply px-10 py-3.5 max-w-[200px] min-w-[80px] text-center border rounded-md duration-300 hover:shadow block sm:w-auto;
   }
+  .btn-back {
+    @apply w-12 h-12 rounded-md bg-primarysoft flex justify-center items-center absolute top-5 left-5 text-white cursor-pointer;
+  }
 }
 
 /* Global */
