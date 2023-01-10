@@ -10,10 +10,22 @@ function Futures() {
       <section className="container">
         <div className="grid futures gap-10">
           <FuturesCard
+            img="/images/easy.png"
+            alt="سهل"
+            title="سهولة الإستخدام"
+            desc="أحجز بسهولة فى هذا الموقع فقط لا تحتاج الى شرح كيفية الإستخدام او ما الى ذلك"
+          />
+          <FuturesCard
             img="/images/clock.png"
             alt="ساعة"
             title="السرعة"
             desc="أحجز سريعا من هذا الموقع الإلكترونى بدلا من تضييع الوقت فى الذهاب الى الدرس "
+          />
+          <FuturesCard
+            img="/images/home.png"
+            alt="بيت"
+            title="من بيتك"
+            desc="لا تحتاج الى النزول من بيتك لحجز مكان ما فى الدرس. فقط احجز من هنا"
           />
           <FuturesCard
             img="/images/money.png"
@@ -28,16 +40,10 @@ function Futures() {
             desc="ليس عليك التفكير بإستعجال خذ وقتك و احجز فى اى وقت تريده و فى اى مجموعة"
           />
           <FuturesCard
-            img="/images/home.png"
-            alt="بيت"
-            title="من بيتك"
-            desc="لا تحتاج الى النزول من بيتك لحجز مكان ما فى الدرس. فقط احجز من هنا"
-          />
-          <FuturesCard
-            img="/images/easy.png"
-            alt="سهل"
-            title="سهولة الإستخدام"
-            desc="أحجز بسهولة فى هذا الموقع فقط لا تحتاج الى شرح كيفية الإستخدام او ما الى ذلك"
+            img="/images/management.png"
+            alt="الإدارة"
+            title="الإدارة المتكاملة"
+            desc="يمكن للمعلمين التحكم في المجموعات، التحقق من الطلاب الذين ينضمون إلى مجموعاتهم، تعديل المجموعات، و غيرها."
           />
           <FuturesCard
             img="/images/society.png"
