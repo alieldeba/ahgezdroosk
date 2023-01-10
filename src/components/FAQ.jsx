@@ -31,7 +31,7 @@ function FAQ() {
   return (
     <>
       <h1 className="heading">الأسئلة الشائعة</h1>
-      <section className="leading-relaxed max-w-screen-xl mx-auto px-4 lg:px-8">
+      <section className="leading-relaxed max-w-screen-xl mx-auto px-4 lg:px-8 pb-24">
         <div className="mt-14 gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {faqsList.map((item, idx) => (
             <div className="space-y-3 mt-5" key={idx}>

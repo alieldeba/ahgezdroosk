@@ -59,6 +59,9 @@ form:not(.search) {
 .futures {
   grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
 }
+.team {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {

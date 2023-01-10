@@ -14,8 +14,8 @@ function Home() {
       <Futures />
       <OurGoal />
       <HowItWorks />
+      <Team />
       <FAQ />
-      {/* <Team /> */}
     </>
   );
 }
