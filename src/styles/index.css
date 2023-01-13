@@ -60,7 +60,7 @@ form:not(.search) {
   grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
 }
 .team {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 /* Scrollbar Styles */
