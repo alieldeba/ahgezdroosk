@@ -71,7 +71,7 @@ form:not(.search) {
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #0075ff;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;

@@ -3,6 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import React from "react";
 import axios from "axios";
 
+// Models
+import Notification from "./models/Notification";
+
 // Components
 const Header = React.lazy(() => import("./components/Header"));
 const Footer = React.lazy(() => import("./components/Footer"));
@@ -22,7 +25,7 @@ const TeacherSignup = React.lazy(() => import("./pages/TeacherSignup"));
 const UserManual = React.lazy(() => import("./pages/UserManual"));
 const Admin = React.lazy(() => import("./pages/Admin"));
 const License = React.lazy(() => import("./pages/License"));
-const Error = React.lazy(() => import("./pages/Error"));
+const Error = React.lazy(() => import("./pages/404"));
 
 function App() {
   return (
