@@ -7,6 +7,7 @@ const HowItWorks = React.lazy(() => import("../components/HowItWorks"));
 const FAQ = React.lazy(() => import("../components/FAQ"));
 const Team = React.lazy(() => import("../components/Team"));
 const Subscriptions = React.lazy(() => import("./Subscriptions"));
+// const Contact = React.lazy(() => import("../components/Contact"));
 
 function Home() {
   return (
@@ -15,9 +16,10 @@ function Home() {
       <Futures />
       <OurGoal />
       <HowItWorks />
-      <Subscriptions />
+      {/* <Subscriptions /> */}
       <Team />
       <FAQ />
+      {/* <Contact /> */}
     </>
   );
 }

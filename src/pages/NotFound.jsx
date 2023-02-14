@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Error() {
+function NotFound() {
   return (
     <main>
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
@@ -13,11 +13,8 @@ function Error() {
           <p className="text-secondary">
             عذرا، الصفحة التي تبحث عنها لا يمكن العثور عليها أو قد تم إزالتها.
           </p>
-          <Link
-            to="/"
-            className="btn-primary m-auto"
-          >
-           الصفحة الرئيسية
+          <Link to="/" className="btn-primary m-auto">
+            الصفحة الرئيسية
           </Link>
         </div>
       </div>
@@ -25,4 +22,4 @@ function Error() {
   );
 }
 
-export default React.memo(Error);
+export default React.memo(NotFound);

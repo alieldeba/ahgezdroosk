@@ -1,0 +1,58 @@
+{
+  "teachers": [
+    {
+      "name": "عبد العال ضرغام",
+      "email": "abdelal@gmail.com",
+      "password": "abdelal1234",
+      "subject": "عربى",
+      "isSubscriped": true,
+      "groups": [
+        {
+          "name": "اتنين و خميس الساعة 2 ظهرا",
+          "students": 40,
+          "isOpen": true
+        },
+        {
+          "name": "سبت و تلات الساعة 5",
+          "students": 55,
+          "isOpen": false
+        }
+      ]
+    },
+    {
+      "name": "رضا شاكر",
+      "email": "redashaker@gmail.com",
+      "password": "redaa1234",
+      "subject": "دراسات",
+      "isSubscriped": true,
+      "groups": [
+        {
+          "name": "احد و اربع الساعة اربعو و نص مجموعة خاصة",
+          "students": 20,
+          "isOpen": false
+        },
+        {
+          "name": "اثنين و خميس الساعة اثنين ظهرا",
+          "students": 50,
+          "isOpen": true
+        }
+      ]
+    }
+  ],
+  "students": [
+    {
+      "name": "علي سامح الديبة",
+      "email": "alieldeba375@gmail.com",
+      "password": "alieldeba123",
+      "telephone": "01069684857",
+      "grade": "3rd prep"
+    },
+    {
+      "name": "أدهم طارق",
+      "email": "adhamtarek@gmail.com",
+      "password": "adhaam123",
+      "telephone": "01023627456",
+      "grade": "3rd prep"
+    }
+  ]
+}

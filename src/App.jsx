@@ -25,7 +25,7 @@ const TeacherSignup = React.lazy(() => import("./pages/TeacherSignup"));
 const UserManual = React.lazy(() => import("./pages/UserManual"));
 const Admin = React.lazy(() => import("./pages/Admin"));
 const License = React.lazy(() => import("./pages/License"));
-const Error = React.lazy(() => import("./pages/404"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="groups" element={<Groups />} />
-        <Route path="subscriptions" element={<Subscriptions />} />
+        {/* <Route path="subscriptions" element={<Subscriptions />} /> */}
         <Route path="teachers" element={<Teachers />} />
         <Route path="signup" element={<Signup />} />
         <Route path="signup/student" element={<StudentSignup />} />
@@ -45,7 +45,7 @@ function App() {
         <Route path="user-manual" element={<UserManual />} />
         <Route path="license" element={<License />} />
         <Route path="admin" element={<Admin />} />
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
