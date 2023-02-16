@@ -59,8 +59,11 @@ form:not(.search) {
 .futures {
   grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
 }
-.team {
+.team, .teachers {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: auto;
+  gap: 3;
 }
 
 /* Scrollbar Styles */
