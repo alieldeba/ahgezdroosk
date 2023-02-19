@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 // import SubscriptionMessage from "../models/SubscriptionMessage";
-import TeamCard from "../components/TeamCard";
+import TeacherCard from "../components/TeacherCard";
 import { Link } from "react-router-dom";
 
 function Teachers() {
@@ -17,12 +17,12 @@ function Teachers() {
     }
 
     axios
-      .get("https://mocki.io/v1/22dc52f4-4099-4f98-8cd9-de6c67afdff3")
+      .get("https://mocki.io/v1/10c9e2bb-7709-455a-95f7-596d5aa8126b")
       .then((res) =>
         setAllTeachers(
           res.data.teachers.filter(
             (teacher) =>
-              teacher.name.includes(search) || teacher.subject.includes(search)
+              teacher.name.includes(search) || teacher.subject === search
           )
         )
       );
@@ -35,7 +35,7 @@ function Teachers() {
   return (
     <main className="min-h-[calc(100vh-100px)]">
       <h1 className="heading">أبحث عن معلمك</h1>
-      <section className="container">
+      <section className="container mb-24">
         <form
           method="get"
           className="flex justify-center search"
@@ -56,14 +56,17 @@ function Teachers() {
           </div>
         </form>
       </section>
-      <section className="container teachers mt-24">
+      <section className="container teachers text-center">
         {getAllTeachers &&
           getAllTeachers.map((teacher) => (
-            <Link to={`/teachers/${teacher.id}`} className="cursor-pointer">
-              <TeamCard
+            <Link
+              to={`/teachers/${teacher.id}`}
+              className="cursor-pointer w-fit"
+            >
+              <TeacherCard
                 name={teacher.name}
-                job={teacher.subject}
-                img="https://via.placeholder.com/150"
+                subject={teacher.subject}
+                img={teacher.img}
                 key={teacher.name}
               />
             </Link>

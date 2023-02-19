@@ -2,15 +2,16 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import GroupCard from "../components/GroupCard";
+import Loader from "../components/Loader";
 
-function TeachersDetails(props) {
+function TeachersDetails() {
   const { id } = useParams();
 
   const [selectedTeacher, setSelectedTeacher] = React.useState(null);
 
   React.useEffect(() => {
     axios
-      .get("https://mocki.io/v1/22dc52f4-4099-4f98-8cd9-de6c67afdff3")
+      .get("https://mocki.io/v1/10c9e2bb-7709-455a-95f7-596d5aa8126b")
       .then((res) =>
         setSelectedTeacher(
           res.data.teachers.filter((teacher) => teacher.id == id)[0]
@@ -27,11 +28,17 @@ function TeachersDetails(props) {
       {selectedTeacher ? (
         <main className="relative">
           <div className="mb-20">
-            <img src="/images/cover.jpg" className="w-full h-60 object-cover" />
             <img
-              src="https://via.placeholder.com/150"
+              src="/images/cover.jpg"
+              className="w-full h-60 object-cover"
+              loading="lazy"
+            />
+            <img
+              src={selectedTeacher.img}
               alt={selectedTeacher.name}
-              className="rounded-full absolute right-5 top-40"
+              width={150}
+              loading="lazy"
+              className="rounded-full absolute right-5 top-40 object-cover h-[150px]"
             />
             <button className="btn-primary rounded-full absolute flex items-center justify-center left-5 h-5 mt-5">
               متابعة
@@ -42,15 +49,16 @@ function TeachersDetails(props) {
               {selectedTeacher.name} - {selectedTeacher.subject}
             </h3>
           </section>
-          <h3 className="heading">المجموعات</h3>
-          <section className="container">
+          <hr className="container my-24" />
+          <h3 className="heading mt-0 pt-0">المجموعات</h3>
+          <section className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
             {selectedTeacher.groups.map((group) => (
               <GroupCard title={group.name} open={group.isOpen} />
             ))}
           </section>
         </main>
       ) : (
-        ""
+        <Loader />
       )}
     </>
   );
