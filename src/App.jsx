@@ -17,8 +17,8 @@ const Teachers = React.lazy(() => import("./pages/Teachers"));
 // const UserProfile = React.lazy(() => import("./pages/UserProfile"));
 // const Groups = React.lazy(() => import("./pages/Groups"));
 const Login = React.lazy(() => import("./pages/Login"));
-const StudentLogin = React.lazy(() => import("./pages/StudentLogin"));
-const TeacherLogin = React.lazy(() => import("./pages/TeacherLogin"));
+// const StudentLogin = React.lazy(() => import("./pages/StudentLogin"));
+// const TeacherLogin = React.lazy(() => import("./pages/TeacherLogin"));
 const Signup = React.lazy(() => import("./pages/Signup"));
 const StudentSignup = React.lazy(() => import("./pages/StudentSignup"));
 const TeacherSignup = React.lazy(() => import("./pages/TeacherSignup"));
@@ -41,8 +41,8 @@ function App() {
         <Route path="signup/student" element={<StudentSignup />} />
         <Route path="signup/teacher" element={<TeacherSignup />} />
         <Route path="login" element={<Login />} />
-        <Route path="login/student" element={<StudentLogin />} />
-        <Route path="login/teacher" element={<TeacherLogin />} />
+        {/* <Route path="login/student" element={<StudentLogin />} /> */}
+        {/* <Route path="login/teacher" element={<TeacherLogin />} /> */}
         <Route path="user-manual" element={<UserManual />} />
         {/* <Route path="license" element={<License />} /> */}
         <Route path="admin" element={<Admin />} />

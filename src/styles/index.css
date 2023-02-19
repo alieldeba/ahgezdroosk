@@ -46,10 +46,10 @@ input {
   direction: ltr;
   padding: 2px 5px;
 }
-form:not(.search) {
+/* form:not(.search) {
   border: solid 1px #0075ff;
   width: 275px;
-}
+} */
 .rtl {
   direction: rtl;
 }
