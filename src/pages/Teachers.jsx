@@ -8,6 +8,18 @@ function Teachers() {
   const [search, setSearch] = React.useState("");
   const [getAllTeachers, setAllTeachers] = React.useState(null);
 
+  // replaces some characters in word with other characters
+  function organizeWord(word) {
+    const replacementMap = {
+      أ: "ا",
+      إ: "ا",
+      ى: "ي",
+    };
+    return word.replace(/[أإى]/g, function (match) {
+      return replacementMap[match];
+    });
+  }
+
   function getTeachers(e) {
     e.preventDefault();
 
@@ -22,7 +34,8 @@ function Teachers() {
         setAllTeachers(
           res.data.teachers.filter(
             (teacher) =>
-              teacher.name.includes(search) || teacher.subject === search
+              organizeWord(teacher.name).includes(organizeWord(search)) ||
+              teacher.subject === organizeWord(search)
           )
         )
       );
