@@ -8,13 +8,13 @@
     @apply text-3xl p-10 mb-5 relative before:absolute before:w-12 before:h-1 before:bottom-5 before:right-10 before:bg-[#c6c6c6] after:absolute after:w-20 after:h-1 after:bottom-2 after:right-10 after:bg-[#c6c6c6];
   }
   .btn-primary {
-    @apply px-10 py-3.5 max-w-[200px] min-w-[80px] text-white transition-all text-center rounded-md shadow-md block sm:w-auto bg-primary;
+    @apply inline-block rounded bg-primary px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)];
   }
   .btn-success {
     @apply px-10 py-3.5 max-w-[200px] min-w-[80px] text-white transition-all text-center rounded-md shadow-md block sm:w-auto bg-success;
   }
   .btn-secondary {
-    @apply px-10 py-3.5 max-w-[200px] min-w-[80px] text-center border rounded-md duration-300 hover:shadow block sm:w-auto;
+    @apply inline-block rounded bg-neutral-50 px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-neutral-800 shadow-[0_4px_9px_-4px_#fbfbfb] transition duration-150 ease-in-out hover:bg-neutral-100 hover:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:bg-neutral-100 focus:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)] focus:outline-none focus:ring-0 active:bg-neutral-200 active:shadow-[0_8px_9px_-4px_rgba(251,251,251,0.3),0_4px_18px_0_rgba(251,251,251,0.2)];
   }
   .btn-back {
     @apply w-12 h-12 rounded-md bg-primarysoft flex justify-center items-center absolute top-5 left-5 text-white cursor-pointer;
