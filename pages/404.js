@@ -1,27 +1,23 @@
-import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
+import Image from "next/image"
 
-const NotFound = () => {
-  const router = useRouter();
-  useEffect(() => {
-    setTimeout(() => {
-      router.push('/')
-    }, 3000);
-  }, []);
-
+function NotFound() {
   return (
-    <div className="not-found">
-      <h1>Ooops...</h1>
-      <h2>That page cannot be found.</h2>
-      <p>
-        Go back to the{" "}
-        <Link href="/">
-          <a>Homepage</a>
-        </Link>
-      </p>
-    </div>
+    <main>
+      <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
+        <div className="max-w-lg mx-auto space-y-3 text-center">
+          <Image src="/images/logo.png" alt="احجز دروسك" width={100} height={100} />
+          <h3 className="text-4xl font-semibold sm:text-5xl">
+            الصفحة غير موجودة
+          </h3>
+          <p className="text-secondary">
+            عذرا، الصفحة التي تبحث عنها لا يمكن العثور عليها أو قد تم إزالتها.
+          </p>
+          <button className="btn-primary m-auto">عُد إلى الخلف</button>
+        </div>
+      </div>
+    </main>
   );
-};
+}
 
-export default NotFound;
+export default React.memo(NotFound);

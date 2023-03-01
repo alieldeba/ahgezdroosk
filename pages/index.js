@@ -1,33 +1,36 @@
+import React from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 
-export default function Home() {
+import Hero from "../components/Hero";
+import Futures from "../components/Futures";
+import OurGoal from "../components/OurGoal";
+import HowItWorks from "../components/HowItWorks";
+import FAQ from "../components/FAQ.js";
+import Team from "../components/Team";
+// const Futures = React.lazy(() => import("../components/Futures"));
+// const OurGoal = React.lazy(() => import("../components/OurGoal"));
+// const HowItWorks = React.lazy(() => import("../components/HowItWorks"));
+// const FAQ = React.lazy(() => import("../components/FAQ"));
+// const Team = React.lazy(() => import("../components/Team"));
+// const Subscriptions = React.lazy(() => import("./Subscriptions"));
+// const Contact = React.lazy(() => import("../components/Contact"));
+
+function Home() {
   return (
     <>
       <Head>
-        <title>Ninja List | Home</title>
-        <meta name="keywords" content="ninja" />
+        <title>منصة أحجز دروسك - الصفحة الرئيسية</title>
       </Head>
-      <div>
-        <h1 className={styles.title}>Homepage</h1>
-        <p className={styles.text}>
-          Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Molestias aut, repellat ipsum facere voluptate dicta obcaecati
-          deserunt nobis suscipit eaque?Lorem, Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Molestias aut, repellat ipsum facere
-          voluptate dicta obcaecati deserunt nobis suscipit eaque?
-        </p>
-        <p className={styles.text}>
-          Lorem, Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Molestias aut, repellat ipsum facere voluptate dicta obcaecati
-          deserunt nobis suscipit eaque?Lorem, Lorem, ipsum dolor sit amet
-          consectetur adipisicing elit. Molestias aut, repellat ipsum facere
-          voluptate dicta obcaecati deserunt nobis suscipit eaque?Lorem, Lorem,
-          ipsum dolor sit amet consectetur adipisicing elit. Molestias aut,
-          repellat ipsum facere voluptate dicta obcaecati deserunt nobis
-          suscipit eaque?
-        </p>
-      </div>
+      <Hero />
+      <Futures />
+      <OurGoal />
+      <HowItWorks />
+      {/* <Subscriptions /> */}
+      <Team />
+      <FAQ />
+      {/* <Contact /> */}
     </>
   );
 }
+
+export default Home;
