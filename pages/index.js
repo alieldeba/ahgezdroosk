@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import Futures from "../components/Futures";
 import OurGoal from "../components/OurGoal";
 import HowItWorks from "../components/HowItWorks";
-import FAQ from "../components/FAQ.js";
+import FAQ from "../components/FAQ";
 import Team from "../components/Team";
 // const Futures = React.lazy(() => import("../components/Futures"));
 // const OurGoal = React.lazy(() => import("../components/OurGoal"));
@@ -19,7 +19,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>منصة أحجز دروسك - الصفحة الرئيسية</title>
+        <title>الصفحة الرئيسية - منصة أحجز دروسك التعليمية</title>
       </Head>
       <Hero />
       <Futures />
@@ -33,4 +33,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default React.memo(Home);
