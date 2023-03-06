@@ -1,17 +1,13 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import Head from "next/head";
 
-import Hero from "../components/Hero";
-import Futures from "../components/Futures";
-import OurGoal from "../components/OurGoal";
-import HowItWorks from "../components/HowItWorks";
-import FAQ from "../components/FAQ";
-import Team from "../components/Team";
-// const Futures = React.lazy(() => import("../components/Futures"));
-// const OurGoal = React.lazy(() => import("../components/OurGoal"));
-// const HowItWorks = React.lazy(() => import("../components/HowItWorks"));
-// const FAQ = React.lazy(() => import("../components/FAQ"));
-// const Team = React.lazy(() => import("../components/Team"));
+const Hero = dynamic(() => import("../components/Hero"));
+const Futures = dynamic(() => import("../components/Futures"));
+const OurGoal = dynamic(() => import("../components/OurGoal"));
+const HowItWorks = dynamic(() => import("../components/HowItWorks"));
+const FAQ = dynamic(() => import("../components/FAQ"));
+const Team = dynamic(() => import("../components/Team"));
 // const Subscriptions = React.lazy(() => import("./Subscriptions"));
 // const Contact = React.lazy(() => import("../components/Contact"));
 

@@ -1,10 +1,33 @@
-import React from 'react';
+import React from "react";
 import Layout from "../components/Layout.js";
-// import Loader from "../components/Loader";
+import Loader from "../components/Loader";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  const [pageLoading, setPageLoading] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
+
+    router.events.on("routeChangeStart", handleStart);
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
+
+    return () => {
+      router.events.off("routeChangeStart", handleStart);
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
+  }, [router]);
+
   return (
     <>
       <Head>
@@ -54,11 +77,10 @@ function MyApp({ Component, pageProps }) {
         />
         <title>منصة احجز دروسك للطلاب و المعلمين</title>
       </Head>
-      {/* <React.Suspense fallback={<Loader/>}> */}
+      {pageLoading && <Loader />}
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      {/* </React.Suspense> */}
     </>
   );
 }

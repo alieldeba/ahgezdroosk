@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import Link from "next/link";
 import Head from "next/head";
-import TeacherCard from "./TeacherCard";
+import dynamic from "next/dynamic";
+const TeacherCard = dynamic(() => import("./TeacherCard"));
 
 function Teachers({ initialTeachers }) {
   const [search, setSearch] = React.useState("");
@@ -43,7 +44,11 @@ function Teachers({ initialTeachers }) {
       <main className="min-h-[calc(100vh-100px)]">
         <h1 className="heading">أبحث عن معلمك</h1>
         <section className="container mb-24">
-          <form method="get" className="flex justify-center search" onSubmit={handleSearch}>
+          <form
+            method="get"
+            className="flex justify-center search"
+            onSubmit={handleSearch}
+          >
             <div className="w-full md:w-[500px] lg:w-[800px] relative">
               <input
                 type="text"
@@ -62,10 +67,7 @@ function Teachers({ initialTeachers }) {
         <section className="container teachers text-center">
           {showTeachers &&
             allTeachers.map((teacher) => (
-              <Link
-                href={`/teachers/${teacher.id}`}
-                key={teacher.name}
-              >
+              <Link href={`/teachers/${teacher.id}`} key={teacher.name}>
                 <a className="cursor-pointer w-fit">
                   <TeacherCard
                     name={teacher.name}

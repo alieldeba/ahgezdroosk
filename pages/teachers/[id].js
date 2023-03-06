@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Image from "next/image";
-import GroupCard from "./GroupCard";
+import dynamic from "next/dynamic";
 import Head from "next/head";
+const GroupCard = dynamic(() => import("./GroupCard"))
 
 export const getStaticPaths = async () => {
   try {
