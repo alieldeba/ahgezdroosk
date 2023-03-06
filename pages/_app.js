@@ -1,6 +1,6 @@
-// import React from 'react';
-import Layout from "../components/Layout";
-import Loader from "../components/Loader";
+import React from 'react';
+import Layout from "../components/Layout.js";
+// import Loader from "../components/Loader";
 import Head from "next/head";
 import "../styles/global.css";
 

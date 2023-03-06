@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Image from "next/image";
 import GroupCard from "./GroupCard";
+import Head from "next/head";
 
 export const getStaticPaths = async () => {
   try {
@@ -44,24 +45,31 @@ export const getStaticProps = async (args) => {
 function TeacherProfile({ teacher }) {
   return (
     <>
+      <Head>
+        <title>{teacher.name} - منصة أحجز دروسك التعليمية</title>
+      </Head>
       <main className="relative">
         <div className="mb-20">
-          <Image
-            src="/images/cover.jpg"
-            width={1920}
-            height={1080}
-            className="w-full h-60 object-cover"
-          />
-          <Image
-            src={teacher.img}
-            alt={teacher.name}
-            width={150}
-            height={150}
-            className="rounded-full absolute right-5 top-40 object-cover h-[150px]"
-          />
-          <button className="btn-primary rounded-full absolute flex items-center justify-center left-5 h-5 mt-5">
-            متابعة
-          </button>
+          <div className="w-full">
+            <Image
+              src="/images/cover.jpg"
+              layout="responsive"
+              width={100}
+              height={24}
+            />
+          </div>
+          <div className="flex justify-between items-center relative">
+            <Image
+              src={teacher.img}
+              alt={teacher.name}
+              width={150}
+              height={150}
+              className="rounded-full absolute right-5 -top-[150px] z-10 object-cover h-[150px]"
+            />
+            <button className="btn-primary rounded-full absolute flex items-center justify-center left-5 h-5 p-5">
+              متابعة
+            </button>
+          </div>
         </div>
         <section className="container">
           <h3 className="text-3xl">
