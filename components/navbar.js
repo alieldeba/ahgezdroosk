@@ -17,12 +17,15 @@ function Navbar() {
       <nav className="items-center fixed pt-5 md:pt-0 w-full px-4 bg-white h-[80px] mx-auto z-10 sm:px-8 md:flex md:space-x-6 md:space-x-reverse">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <Image
-              src="/images/logo.png"
-              width={50}
-              height={50}
-              alt="أحجز دروسك"
-            />
+            <div>
+              <Image
+                src="/images/logo.png"
+                width={50}
+                height={50}
+                alt="أحجز دروسك"
+                className="cursor-pointer"
+              />
+            </div>
           </Link>
           <button
             className="outline-none md:hidden"

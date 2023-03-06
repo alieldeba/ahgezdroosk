@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
-import TeacherCard from "../components/TeacherCard";
 import Link from "next/link";
 import Head from "next/head";
+import TeacherCard from "./TeacherCard";
 
-function Teachers() {
+function Teachers({ initialTeachers }) {
   const [search, setSearch] = React.useState("");
-  const [getAllTeachers, setAllTeachers] = React.useState(null);
+  const [allTeachers, setAllTeachers] = React.useState(initialTeachers);
+  const [showTeachers, setShowTeachers] = React.useState(false);
 
   // replaces some characters in word with other characters
   function organizeWord(word) {
@@ -20,30 +21,19 @@ function Teachers() {
     });
   }
 
-  function getTeachers(e) {
+  const handleSearch = async (e) => {
     e.preventDefault();
-
-    if (!search) {
-      setAllTeachers(null);
-      return;
-    }
-
-    axios
-      .get("https://mocki.io/v1/10c9e2bb-7709-455a-95f7-596d5aa8126b")
-      .then((res) =>
-        setAllTeachers(
-          res.data.teachers.filter(
-            (teacher) =>
-              organizeWord(teacher.name).includes(organizeWord(search)) ||
-              teacher.subject === organizeWord(search)
-          )
-        )
-      );
-
-    if (!getAllTeachers) {
-      setAllTeachers(null);
-    }
-  }
+    const response = await axios.get(
+      "https://mocki.io/v1/10c9e2bb-7709-455a-95f7-596d5aa8126b"
+    );
+    const teachers = response.data.teachers.filter(
+      (teacher) =>
+        organizeWord(teacher.name).includes(organizeWord(search)) ||
+        teacher.subject === organizeWord(search)
+    );
+    setAllTeachers(teachers);
+    setShowTeachers(true);
+  };
 
   return (
     <>
@@ -53,11 +43,7 @@ function Teachers() {
       <main className="min-h-[calc(100vh-100px)]">
         <h1 className="heading">أبحث عن معلمك</h1>
         <section className="container mb-24">
-          <form
-            method="get"
-            className="flex justify-center search"
-            onSubmit={(e) => getTeachers(e)}
-          >
+          <form method="get" className="flex justify-center search" onSubmit={handleSearch}>
             <div className="w-full md:w-[500px] lg:w-[800px] relative">
               <input
                 type="text"
@@ -74,24 +60,35 @@ function Teachers() {
           </form>
         </section>
         <section className="container teachers text-center">
-          {getAllTeachers &&
-            getAllTeachers.map((teacher) => (
+          {showTeachers &&
+            allTeachers.map((teacher) => (
               <Link
-                to={`/teachers/${teacher.id}`}
-                className="cursor-pointer w-fit"
+                href={`/teachers/${teacher.id}`}
+                key={teacher.name}
               >
-                <TeacherCard
-                  name={teacher.name}
-                  subject={teacher.subject}
-                  img={teacher.img}
-                  key={teacher.name}
-                />
+                <a className="cursor-pointer w-fit">
+                  <TeacherCard
+                    name={teacher.name}
+                    subject={teacher.subject}
+                    img={teacher.img}
+                  />
+                </a>
               </Link>
             ))}
         </section>
       </main>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const response = await axios.get(
+    "https://mocki.io/v1/10c9e2bb-7709-455a-95f7-596d5aa8126b"
+  );
+  const initialTeachers = response.data.teachers;
+  return {
+    props: { initialTeachers },
+  };
 }
 
 export default React.memo(Teachers);

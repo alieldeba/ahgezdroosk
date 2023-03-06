@@ -22,59 +22,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ar" dir="rtl">
-        <Head>
-          <meta charset="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          {/* SEO */}
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="أحجز" />
-          <meta property="og:locale" content="ar_AR" />
-          <meta property="og:locale:alternate" content="ar_AR" />
-          <meta property="og:url" content="https://ahgez.vercel.app" />
-          <meta
-            property="og:title"
-            content="منصة أحجز دروسك للطلاب و المعلمين"
-          />
-          <meta
-            property="og:description"
-            content="منصة أحجز دروسك للطلاب و المعلمين لحجز الدروس من البيت بدون اى تعب"
-          />
-          <meta property="og:image" content="/images/logo.png" />
-          <meta itemprop="name" content="منصة أحجز دروسك للطلاب و المعلمين" />
-          <meta itemprop="url" content="https://ahgez.vercel.app" />
-          <meta itemprop="author" content="أحجز" />
-          <meta itemprop="image" content="/images/logo.png" />
-          <meta
-            itemprop="description"
-            content="منصة أحجز دروسك للطلاب و المعلمين لحجز الدروس من البيت بدون اى تعب"
-          />
-          <meta name="twitter:image" content="/images/logo.png" />
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@alieldeba" />
-          <meta name="twitter:creator" content="@alieldeba" />
-          <meta
-            name="twitter:title"
-            content="منصة أحجز دروسك للطلاب و المعلمين"
-          />
-          <meta name="twitter:image:src" content="/images/logo.png" />
-          <meta
-            name="twitter:description"
-            content="منصة أحجز دروسك للطلاب و المعلمين لحجز الدروس من البيت بدون اى تعب"
-          />
-          <meta
-            name="description"
-            content="منصة أحجز دروسك للطلاب و المعلمين لحجز الدروس من البيت بدون اى تعب"
-          />
-          <link
-            rel="icon"
-            href="https://mj-gallery.com/55d364e9-c8aa-4f7a-82f9-27874e33cb31/grid_0.png"
-          />
-          <title>منصة احجز دروسك للطلاب و المعلمين</title>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

@@ -19,7 +19,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>الصفحة الرئيسية - منصة أحجز دروسك التعليمية</title>
+        <title>منصة أحجز دروسك التعليمية</title>
       </Head>
       <Hero />
       <Futures />
