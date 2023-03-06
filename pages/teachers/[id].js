@@ -46,7 +46,7 @@ function TeacherProfile({ teacher }) {
   return (
     <>
       <Head>
-        <title>{teacher.name} - منصة أحجز دروسك التعليمية</title>
+        <title>{teacher?.name} - منصة أحجز دروسك التعليمية</title>
       </Head>
       <main className="relative">
         <div className="mb-20">
@@ -60,8 +60,8 @@ function TeacherProfile({ teacher }) {
           </div>
           <div className="flex justify-between items-center relative">
             <Image
-              src={teacher.img}
-              alt={teacher.name}
+              src={teacher?.img}
+              alt={teacher?.name}
               width={150}
               height={150}
               className="rounded-full absolute right-5 -top-[150px] z-10 object-cover h-[150px]"
@@ -73,13 +73,13 @@ function TeacherProfile({ teacher }) {
         </div>
         <section className="container">
           <h3 className="text-3xl">
-            {teacher.name} - {teacher.subject}
+            {teacher?.name} - {teacher?.subject}
           </h3>
         </section>
         <hr className="container my-24" />
         <h3 className="heading mt-0 pt-0">المجموعات</h3>
         <section className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
-          {teacher.groups.map((group) => (
+          {teacher?.groups.map((group) => (
             <GroupCard title={group.name} open={group.isOpen} />
           ))}
         </section>
