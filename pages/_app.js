@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const NavBar = dynamic(() => import("../components/NavBar"));
 const Footer = dynamic(() => import("../components/Footer"));
 import Loader from "../components/Loader";
-import "../styles/global.css";
+import "../styles/index.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -105,7 +105,7 @@ const pageTransition = {
         />
         <title>منصة احجز دروسك للطلاب و المعلمين</title>
       </Head>
-      {pageLoading  <Loader />}
+      {pageLoading && <Loader />}
       <AnimatePresence exitBeforeEnter>
         <motion.div
           key={router.route}
