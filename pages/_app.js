@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import { Analytics } from '@vercel/analytics/react';
 import { AnimatePresence, motion } from "framer-motion";
 const NavBar = dynamic(() => import("../components/NavBar"));
 const Footer = dynamic(() => import("../components/Footer"));
@@ -103,23 +104,24 @@ const pageTransition = {
           rel="icon"
           href="https://mj-gallery.com/55d364e9-c8aa-4f7a-82f9-27874e33cb31/grid_0.png"
         />
-        <title>منصة احجز دروسك للطلاب و المعلمين</title>
+        <title>منصة احجز دروسك التعليمية</title>
       </Head>
       {pageLoading && <Loader />}
-      <AnimatePresence exitBeforeEnter>
-        <motion.div
+      {!pageLoading && <AnimatePresence mode="wait">
+        {/* <motion.div
           key={router.route}
           initial='initial'
           animate='in'
           exit='out'
           variants={pageVariants}
           transition={pageTransition}
-        >
+        > */}
           <NavBar />
             <Component {...pageProps} />
+            <Analytics />
           <Footer />
-        </motion.div>
-      </AnimatePresence>
+        {/* </motion.div> */}
+      </AnimatePresence>}
     </>
   );
 }

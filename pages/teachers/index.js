@@ -39,7 +39,7 @@ function Teachers({ initialTeachers }) {
   return (
     <>
       <Head>
-        <title>معلمين منصة أحجز دروسك - منصة أحجز دروسك التعليمية</title>
+        <title>معلمون منصة أحجز دروسك - منصة أحجز دروسك التعليمية</title>
       </Head>
       <main className="min-h-[calc(100vh-100px)]">
         <h1 className="heading">أبحث عن معلمك</h1>
