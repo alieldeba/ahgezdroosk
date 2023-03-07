@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 function Hero() {
   return (
@@ -13,15 +14,23 @@ function Hero() {
         /> */}
         <main className="pt-[7rem] md:pt-[11rem]">
           <div className="text-center space-y-4">
-            <h1 className="text-gray-800 font-bold text-4xl md:text-5xl">
+            <motion.h1
+              className="text-gray-800 font-bold text-4xl md:text-5xl"
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+            >
               منصة أحجز دروسك لتعليم
               <span className="text-primary"> أفضل</span>
-            </h1>
-            <p className="max-w-xl mx-auto leading-relaxed">
+            </motion.h1>
+            <motion.p
+              className="max-w-xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
               هنالك الكثير ممن يعانون من الكسل الذى لا يدفعهم الى النزول من
               بيتهم لحجز دروسهم, لهذا تم تصميم و تجهيز هذا الموقع لكى تحجز جميع
               دروسك من بيتك
-            </p>
+            </motion.p>
           </div>
           <div className="mt-12 flex justify-center items-center">
             <Link href="/signup">

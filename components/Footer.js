@@ -15,11 +15,6 @@ function Footer() {
       href: "/subscriptions",
       name: "الإشتراكات",
     },
-
-    {
-      href: "/license",
-      name: "الحقوق",
-    },
   ];
 
   return (
@@ -49,7 +44,7 @@ function Footer() {
         </ul>
         <div className="mt-8">
           <p className="mt-4 sm:mt-0 text-center">
-            الحقوق محفوظة لمنصة احجز دروسك © 2022 - {new Date().getFullYear()}
+            جميع الحقوق محفوظة لدى منصة أحجز دروسك © 2022 - {new Date().getFullYear()}
           </p>
         </div>
       </div>

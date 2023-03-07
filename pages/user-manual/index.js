@@ -1,5 +1,6 @@
+import dynamic from "next/dynamic";
 import React from "react";
-const NumberBox = React.lazy(() => import("../components/NumberBox"));
+const NumberBox = dynamic(() => import("./NumberBox"));
 
 function UserManual() {
   return (
