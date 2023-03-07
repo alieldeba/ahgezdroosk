@@ -1,8 +1,11 @@
 import React from "react";
-import Layout from "../components/Layout.js";
-import Loader from "../components/Loader";
-import { useRouter } from "next/router";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
+const NavBar = dynamic(() => import("../components/NavBar"));
+const Footer = dynamic(() => import("../components/Footer"));
+import Loader from "../components/Loader";
 import "../styles/global.css";
 
 function MyApp({ Component, pageProps }) {
@@ -27,6 +30,31 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeError", handleComplete);
     };
   }, [router]);
+
+  
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    x: '-100vw',
+    scale: 0.8
+  },
+  in: {
+    opacity: 1,
+    x: 0,
+    scale: 1
+  },
+  out: {
+    opacity: 0,
+    x: '100vw',
+    scale: 1.2
+  }
+};
+
+const pageTransition = {
+  type: 'tween',
+  ease: 'anticipate',
+  duration: 0.5
+};
 
   return (
     <>
@@ -77,10 +105,21 @@ function MyApp({ Component, pageProps }) {
         />
         <title>منصة احجز دروسك للطلاب و المعلمين</title>
       </Head>
-      {pageLoading && <Loader />}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {pageLoading  <Loader />}
+      <AnimatePresence exitBeforeEnter>
+        <motion.div
+          key={router.route}
+          initial='initial'
+          animate='in'
+          exit='out'
+          variants={pageVariants}
+          transition={pageTransition}
+        >
+          <NavBar />
+            <Component {...pageProps} />
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

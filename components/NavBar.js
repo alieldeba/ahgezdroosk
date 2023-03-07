@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-function Navbar() {
+function NavBar() {
   const [state, setState] = React.useState(false);
 
   const navigation = [
@@ -91,4 +91,4 @@ function Navbar() {
   );
 }
 
-export default React.memo(Navbar);
+export default React.memo(NavBar);
