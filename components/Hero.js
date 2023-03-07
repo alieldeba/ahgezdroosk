@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { shadeVariant } from "../variants/textVariants";
 
 function Hero() {
   return (
@@ -16,16 +17,18 @@ function Hero() {
           <div className="text-center space-y-4">
             <motion.h1
               className="text-gray-800 font-bold text-4xl md:text-5xl"
-              initial={{ y: "100vh", opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              variants={shadeVariant}
+              initial="initial"
+              animate="animate"
             >
               منصة أحجز دروسك لتعليم
               <span className="text-primary"> أفضل</span>
             </motion.h1>
             <motion.p
               className="max-w-xl mx-auto leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              variants={shadeVariant}
+              initial="initial"
+              animate="animate"
             >
               هنالك الكثير ممن يعانون من الكسل الذى لا يدفعهم الى النزول من
               بيتهم لحجز دروسهم, لهذا تم تصميم و تجهيز هذا الموقع لكى تحجز جميع
