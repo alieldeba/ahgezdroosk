@@ -1,9 +1,16 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { boxShowVariant } from "../variants/elementVariants";
 
 function FuturesCard(props) {
   return (
-    <div className="p-5 w-full h-[220px] bg-[#e6e6e6] rounded-sm text-center m-auto">
+    <motion.div
+      className="p-5 w-full h-[220px] bg-[#e6e6e6] rounded-sm text-center m-auto"
+      variants={boxShowVariant}
+      initial="hidden"
+      whileInView="visible"
+    >
       <Image
         src={props.img}
         className="m-auto mb-2"
@@ -13,7 +20,7 @@ function FuturesCard(props) {
       />
       <h3 className="text-xl mb-1">{props.title}</h3>
       <p className="text-secondary">{props.desc}</p>
-    </div>
+    </motion.div>
   );
 }
 

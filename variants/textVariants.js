@@ -1,14 +1,21 @@
-export const shadeVariant = {
-  initial: {
+export const shadeTextVariant = {
+  hidden: {
     opacity: 0,
     y: 100,
   },
-  animate: {
+  visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: 2,
-      duration: 1.5,
-    },
+  },
+};
+
+export const textSlideVariant = {
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
   },
 };

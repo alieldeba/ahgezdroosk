@@ -1,10 +1,19 @@
 import React from "react";
-import FuturesCard from "./FuturesCard"
+import {motion} from "framer-motion"
+import { textSlideVariant } from "../variants/textVariants";
+import FuturesCard from "./FuturesCard";
 
 function Futures() {
   return (
     <>
-      <h3 className="heading">المميزات</h3>
+      <motion.h3
+        className="heading"
+        variants={textSlideVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        المميزات
+      </motion.h3>
       <section className="container">
         <div className="grid futures gap-10">
           <FuturesCard

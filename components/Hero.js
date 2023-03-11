@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { shadeVariant } from "../variants/textVariants";
+import { shadeTextVariant } from "../variants/textVariants";
+import { shadeButtonVariant } from "../variants/buttonVariants";
 
 function Hero() {
   return (
@@ -17,18 +18,18 @@ function Hero() {
           <div className="text-center space-y-4">
             <motion.h1
               className="text-gray-800 font-bold text-4xl md:text-5xl"
-              variants={shadeVariant}
-              initial="initial"
-              animate="animate"
+              variants={shadeTextVariant}
+              initial="hidden"
+              whileInView="visible"
             >
               منصة أحجز دروسك لتعليم
               <span className="text-primary"> أفضل</span>
             </motion.h1>
             <motion.p
               className="max-w-xl mx-auto leading-relaxed"
-              variants={shadeVariant}
-              initial="initial"
-              animate="animate"
+              variants={shadeTextVariant}
+              initial="hidden"
+              whileInView="visible"
             >
               هنالك الكثير ممن يعانون من الكسل الذى لا يدفعهم الى النزول من
               بيتهم لحجز دروسهم, لهذا تم تصميم و تجهيز هذا الموقع لكى تحجز جميع
@@ -37,11 +38,25 @@ function Hero() {
           </div>
           <div className="mt-12 flex justify-center items-center">
             <Link href="/signup">
-              <button className="btn-primary ml-5">إنشاء حساب</button>
+              <motion.button
+                className="btn-primary ml-5"
+                variants={shadeButtonVariant}
+                initial="hidden"
+                whileInView="visible"
+              >
+                إنشاء حساب
+              </motion.button>
             </Link>
 
             <Link href="/login">
-              <button className="btn-secondary">تسجيل الدخول</button>
+              <motion.button
+                className="btn-secondary"
+                variants={shadeButtonVariant}
+                initial="hidden"
+                whileInView="visible"
+              >
+                تسجيل الدخول
+              </motion.button>
             </Link>
           </div>
         </main>
