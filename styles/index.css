@@ -36,8 +36,8 @@ html {
 body {
   background-color: #eee;
   font-family: 'Noto Kufi Arabic', sans-serif;
-
   color: #000;
+  overflow-x: hidden;
 }
 
 /* Extras */

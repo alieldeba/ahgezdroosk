@@ -1,9 +1,14 @@
 import React from "react";
+import {motion} from "framer-motion"
 import Image from "next/image";
+import { boxShowVariant } from "../variants/elementVariants";
 
 function TeamCard(props) {
   return (
-    <div className="bg-primarysoft text-white rounded-sm p-5 m-auto w-[200px] h-[210px] mb-5 xl:mb-0">
+    <motion.div className="bg-primarysoft text-white rounded-sm p-5 m-auto w-[200px] h-[210px] mb-5 xl:mb-0"
+    variants={boxShowVariant}
+    initial="hidden"
+    whileInView="visible">
       <Image
         src={props.img}
         alt={props.name}
@@ -13,7 +18,7 @@ function TeamCard(props) {
       />
       <h4 className="mb-2 text-xl">{props.name}</h4>
       <p>{props.job}</p>
-    </div>
+    </motion.div>
   );
 }
 

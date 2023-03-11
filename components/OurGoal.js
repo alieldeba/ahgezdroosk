@@ -1,15 +1,22 @@
 import React from "react";
-import { shadeTextVariant } from "../variants/textVariants";
+import { textShadeVariant, textSlideVariant } from "../variants/textVariants";
 import { motion } from "framer-motion";
 
 function OurGoal() {
   return (
     <>
-      <h3 className="heading">هدف المنصة</h3>
+      <motion.h3
+        className="heading"
+        variants={textSlideVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        هدف المنصة
+      </motion.h3>
       <div className="bg-primary text-center py-10 text-white max-w-full">
         <motion.p
           className="container"
-          variants={shadeTextVariant}
+          variants={textShadeVariant}
           initial="hidden"
           whileInView="visible"
         >

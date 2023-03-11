@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { shadeTextVariant } from "../variants/textVariants";
+import { textShadeVariant } from "../variants/textVariants";
 import { shadeButtonVariant } from "../variants/buttonVariants";
 
 function Hero() {
@@ -18,7 +18,7 @@ function Hero() {
           <div className="text-center space-y-4">
             <motion.h1
               className="text-gray-800 font-bold text-4xl md:text-5xl"
-              variants={shadeTextVariant}
+              variants={textShadeVariant}
               initial="hidden"
               whileInView="visible"
             >
@@ -27,7 +27,7 @@ function Hero() {
             </motion.h1>
             <motion.p
               className="max-w-xl mx-auto leading-relaxed"
-              variants={shadeTextVariant}
+              variants={textShadeVariant}
               initial="hidden"
               whileInView="visible"
             >

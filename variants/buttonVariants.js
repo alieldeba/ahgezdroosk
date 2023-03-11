@@ -4,5 +4,9 @@ export const shadeButtonVariant = {
   },
   visible: {
     opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
   },
 };

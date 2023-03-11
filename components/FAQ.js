@@ -1,4 +1,6 @@
 import React from "react";
+import {motion} from "framer-motion";
+import { textShadeVariant, textSlideVariant } from "../variants/textVariants";
 
 function FAQ() {
   const faqsList = [
@@ -30,15 +32,26 @@ function FAQ() {
 
   return (
     <>
-      <h1 className="heading">الأسئلة الشائعة</h1>
+      <motion.h1
+        className="heading"
+        variants={textSlideVariant}
+        initial="hidden"
+        whileInView="visible"
+      >
+        الأسئلة الشائعة
+      </motion.h1>
       <section className="leading-relaxed max-w-screen-xl mx-auto px-4 lg:px-8 pb-24">
         <div className="mt-14 gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {faqsList.map((item, idx) => (
-            <div className="space-y-3 mt-5" key={idx}>
+            <motion.div className="space-y-3 mt-5" key={idx}
+            variants={textShadeVariant}
+            initial="hidden"
+            whileInView="visible"
+            >
               <h4 className="text-xl font-medium">{item.q}</h4>
               <p className="text-dark">{item.a}</p>
               <hr className="sm:hidden" />
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
