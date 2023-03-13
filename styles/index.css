@@ -10,7 +10,7 @@
 /* Tailwind Components */
 @layer components {
   .heading {
-    @apply text-3xl p-10 mb-5 relative before:absolute before:w-12 before:h-1 before:bottom-5 before:right-10 before:bg-[#c6c6c6] after:absolute after:w-20 after:h-1 after:bottom-2 after:right-10 after:bg-[#c6c6c6];
+    @apply text-3xl p-10 mb-5 w-fit relative before:absolute before:w-12 before:h-1 before:bottom-5 before:right-10 before:bg-[#c6c6c6] after:absolute after:w-20 after:h-1 after:bottom-2 after:right-10 after:bg-[#c6c6c6];
   }
   .btn-primary {
     @apply inline-block rounded bg-primary px-7 pt-3 pb-2.5 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)];
